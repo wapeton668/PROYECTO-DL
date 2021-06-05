@@ -58,6 +58,14 @@ public class Access_Usuarios {
 
     //CRUD TABLA USUARIO*********************************************************************************************
 
+
+    public Cursor getUsuarios(){
+        //ArrayList<Usuarios> lista = new ArrayList<>();
+        this.openWritable();
+        Cursor registros = db.rawQuery("Select * from usuario where estado='S'", null);
+        return registros;
+    }
+
     public long insertarUsuario(String nombre, String ci, String direccion, String celular, String usuario, String contrasena){
         ContentValues values = new ContentValues();
         values.put("nombre", nombre);
@@ -71,19 +79,12 @@ public class Access_Usuarios {
 
         return insertado;
     }
-    public long eliminarUsuario(int ID){
+    /*public long eliminarUsuario(int ID){
         this.openWritable();
         long u=db.delete("usuario", "idusuario="+ID,null);
         this.close();
         return u;
-    }
-
-    public Cursor getUsuarios(){
-        //ArrayList<Usuarios> lista = new ArrayList<>();
-        this.openWritable();
-        Cursor registros = db.rawQuery("Select * from usuario where estado='S'", null);
-        return registros;
-    }
+    }*/
 
     public Cursor getUsuario_a_modificar(int usuarioEditar) {
         this.openReadable();
@@ -94,6 +95,13 @@ public class Access_Usuarios {
     public long ActualizarUsuario(ContentValues values, int usuarioEditar) {
         this.openWritable();
         long accion = db.update("usuario",values, "idusuario="+usuarioEditar,null);
+        return accion;
+    }
+    public long EliminarUsuario(int ID) {
+        ContentValues values = new ContentValues();
+        values.put("estado", "N");
+        this.openWritable();
+        long accion = db.update("usuario",values, "idusuario="+ID,null);
         return accion;
     }
 }

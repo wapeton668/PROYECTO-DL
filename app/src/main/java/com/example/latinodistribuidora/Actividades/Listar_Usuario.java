@@ -118,7 +118,7 @@ public class Listar_Usuario extends AppCompatActivity {
             Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
             Usuarios usu = lista.get(usuarioseleccionado);
             db.openWritable();
-            long resultado = db.eliminarUsuario(usu.getIdusuario());
+            long resultado = db.EliminarUsuario(usu.getIdusuario());
             if(resultado > 0){
                 Toast.makeText(getApplicationContext(),"Usuario eliminado satisfactoriamente", Toast.LENGTH_LONG).show();
                 lista.removeAll(lista);

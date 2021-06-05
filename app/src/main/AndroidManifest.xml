@@ -8,8 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LatinoDistribuidora">
-        <activity android:name=".Actividades.MenuPrincipal"></activity>
+        android:theme="@style/Theme.Design.Light">
+        <activity android:name=".Actividades.MenuPrincipal" />
         <activity android:name=".Actividades.Clientes" />
         <activity android:name=".Actividades.Registrar_Usuario" />
         <activity android:name=".Actividades.Listar_Usuario"/>

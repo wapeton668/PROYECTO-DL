@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_main"
     tools:context=".Actividades.MenuPrincipal">
 
     <LinearLayout
@@ -22,13 +23,13 @@
             android:layout_gravity="center|center_vertical"
             android:gravity="center"
             android:text="DISTRIBUIDORA LATINO"
-            android:textColor="#3307F1"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="54dp" />
 
         <ImageButton
             android:id="@+id/imageButton4"

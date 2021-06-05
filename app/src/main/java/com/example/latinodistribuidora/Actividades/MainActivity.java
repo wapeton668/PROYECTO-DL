@@ -1,12 +1,8 @@
 package com.example.latinodistribuidora.Actividades;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 
 import com.example.latinodistribuidora.R;
@@ -36,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
+   /* @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //TODO Auto-generated method stub
+        // TODO Auto-generated method stub
         if (keyCode == event.KEYCODE_BACK) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("¿Desea cerrar la aplicacion?")
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.setCancelable(false);
+            builder.setMessage("¿Desea salir de Stroopers?")
                     .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -59,7 +57,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onKeyDown(keyCode, event);
-    }
-
-
+    }*/
 }
