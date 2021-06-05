@@ -1,4 +1,4 @@
-package com.example.latinodistribuidora;
+package com.example.latinodistribuidora.Actividades;
 
 
 
@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.latinodistribuidora.Conexion.DatabaseAccess;
+import com.example.latinodistribuidora.CRUD.Access_Usuarios;
+import com.example.latinodistribuidora.R;
 
 public class Registrar_Usuario extends AppCompatActivity {
     public static EditText nombre;
@@ -62,17 +63,18 @@ public class Registrar_Usuario extends AppCompatActivity {
                     confirmar_contrasena.requestFocus();
                 } else {
                     try {
-                        DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+                        Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
                         db.openWritable();
                         long insertado= db.insertarUsuario(nombre.getText().toString(), ci.getText().toString(), direccion.getText().toString(),
                                 celular.getText().toString(), usuario.getText().toString(), contrasena.getText().toString());
                         db.close();
                         if(insertado>0){
                             Toast.makeText(getApplicationContext(),"Usuario registrado exitosamente",Toast.LENGTH_SHORT).show();
+                            Limpiar_y_volver_a_Principal();
                         }else{
                             Toast.makeText(getApplicationContext(),"No se pudo registra el usuario",Toast.LENGTH_SHORT).show();
                         }
-                        Limpiar_y_volver_a_Principal();
+
                     } catch (Exception E) {
 
                         Toast.makeText(getApplicationContext(), "Error fatal: " + E.getMessage(), Toast.LENGTH_LONG).show();
@@ -81,6 +83,8 @@ public class Registrar_Usuario extends AppCompatActivity {
                 }
             }
         });
+
+
         btnListar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,8 +99,6 @@ public class Registrar_Usuario extends AppCompatActivity {
     }
 
     public void Limpiar_y_volver_a_Principal(){
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
         nombre.setText("");
         ci.setText("");
         direccion.setText("");
@@ -104,5 +106,9 @@ public class Registrar_Usuario extends AppCompatActivity {
         usuario.setText("");
         contrasena.setText("");
         confirmar_contrasena.setText("");
+
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
+        this.finish();
     }
 }

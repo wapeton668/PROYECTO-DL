@@ -1,4 +1,4 @@
-package com.example.latinodistribuidora;
+package com.example.latinodistribuidora.Actividades;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -10,7 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.latinodistribuidora.Conexion.DatabaseAccess;
+import com.example.latinodistribuidora.CRUD.Access_Usuarios;
+import com.example.latinodistribuidora.R;
 
 public class Editar_Usuario extends AppCompatActivity {
     private int usuarioEditar;
@@ -36,7 +37,7 @@ public class Editar_Usuario extends AppCompatActivity {
     }
 
     public void refeljarCampos(){
-        DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+        Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
         db.openReadable();
         Cursor c = db.getUsuario_a_modificar(usuarioEditar);
         try {
@@ -71,7 +72,7 @@ public class Editar_Usuario extends AppCompatActivity {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
             confirmarcontrasena.requestFocus();
         }else{
-            DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+            Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
             db.openWritable();
             ContentValues values = new ContentValues();
             values.put("nombre",nombre.getText().toString());

@@ -1,9 +1,11 @@
-package com.example.latinodistribuidora;
+package com.example.latinodistribuidora.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
+
+import com.example.latinodistribuidora.R;
 
 public class Clientes extends AppCompatActivity {
 

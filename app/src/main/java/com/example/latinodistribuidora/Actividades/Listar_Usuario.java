@@ -1,4 +1,4 @@
-package com.example.latinodistribuidora;
+package com.example.latinodistribuidora.Actividades;
 
 
 import android.app.AlertDialog;
@@ -17,8 +17,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.latinodistribuidora.Conexion.DatabaseAccess;
+import com.example.latinodistribuidora.CRUD.Access_Usuarios;
 import com.example.latinodistribuidora.Modelos.Usuarios;
+import com.example.latinodistribuidora.R;
 
 import java.util.ArrayList;
 
@@ -114,7 +115,7 @@ public class Listar_Usuario extends AppCompatActivity {
 
     public void eliminarUsuario(){
         try{
-            DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+            Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
             Usuarios usu = lista.get(usuarioseleccionado);
             db.openWritable();
             long resultado = db.eliminarUsuario(usu.getIdusuario());
@@ -134,7 +135,7 @@ public class Listar_Usuario extends AppCompatActivity {
     public void llenarLista(){
         try{
             lv = (ListView) findViewById(R.id.lista);
-            DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+            Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
             Cursor c = db.getUsuarios();
             if (c.moveToFirst()){
                 do {

@@ -1,10 +1,12 @@
-package com.example.latinodistribuidora;
+package com.example.latinodistribuidora.Actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.latinodistribuidora.R;
 
 public class MenuPrincipal extends AppCompatActivity {
 
