@@ -92,6 +92,12 @@ public class Access_Usuarios {
         return  registro;
     }
 
+    public Cursor getUsuario_IniciarSesion(String usuario, String contrasena) {
+        this.openReadable();
+        Cursor respuesta = db.rawQuery("Select * from usuario where usuario='"+usuario+"' and contrasena='"+contrasena+"' and estado='S'", null);
+        return  respuesta;
+    }
+
     public long ActualizarUsuario(ContentValues values, int usuarioEditar) {
         this.openWritable();
         long accion = db.update("usuario",values, "idusuario="+usuarioEditar,null);

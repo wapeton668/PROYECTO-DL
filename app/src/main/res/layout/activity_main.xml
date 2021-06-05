@@ -81,7 +81,7 @@
                 android:layout_height="21dp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/id_iniciar_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -89,12 +89,12 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/id_iniciar_contrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textPersonName" />
+                android:inputType="textPassword" />
 
             <Space
                 android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                 android:id="@+id/button"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:onClick="irMenu"
+                android:onClick="IniciarSesion"
                 android:text="@string/btnIrMenu" />
         </LinearLayout>
 

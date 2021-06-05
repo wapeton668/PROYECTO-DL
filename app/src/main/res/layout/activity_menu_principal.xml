@@ -8,8 +8,8 @@
     tools:context=".Actividades.MenuPrincipal">
 
     <LinearLayout
-        android:layout_width="337dp"
-        android:layout_height="649dp"
+        android:layout_width="366dp"
+        android:layout_height="661dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="97dp"
+            android:layout_height="118dp"
             android:layout_gravity="center|center_vertical"
             android:gravity="center"
             android:text="DISTRIBUIDORA LATINO"
@@ -27,46 +27,79 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="54dp" />
+            android:layout_height="28dp" />
 
-        <ImageButton
-            android:id="@+id/imageButton4"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="irClientes"
-            app:srcCompat="@drawable/clientes" />
+            android:layout_height="141dp">
+
+            <ImageButton
+                android:id="@+id/id_btnClientes"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:drawable/editbox_background_normal"
+                android:clickable="true"
+                android:cropToPadding="true"
+                android:foreground="@android:drawable/gallery_thumb"
+                android:onClick="irClientes"
+                app:srcCompat="@drawable/clientes" />
+
+            <View
+                android:id="@+id/divider7"
+                android:layout_width="22dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/id_btnProductos"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_background_normal"
+                android:foreground="@android:drawable/gallery_thumb"
+                app:srcCompat="@drawable/productos" />
+        </TableRow>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp" />
 
-        <ImageButton
-            android:id="@+id/imageButton5"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/productos" />
+            android:layout_height="141dp" >
+
+            <ImageButton
+                android:id="@+id/id_btnVender"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_background"
+                android:foreground="@android:drawable/gallery_thumb"
+                app:srcCompat="@drawable/ventas" />
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="22dp"
+                android:layout_height="wrap_content" />
+
+            <ImageButton
+                android:id="@+id/id_btnConfiguracion"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_background"
+                android:foreground="@android:drawable/gallery_thumb"
+                app:srcCompat="@drawable/config" />
+        </TableRow>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="19dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ventas" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="19dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/config" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
