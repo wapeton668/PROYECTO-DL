@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Latino Distribuidora</string>
+    <string name="app_name">Fact-Express</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Usuario</string>
     <string name="prompt_password">Contraseña</string>
