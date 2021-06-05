@@ -11,8 +11,6 @@
         android:theme="@style/Theme.LatinoDistribuidora">
         <activity android:name=".MenuPrincipal"></activity>
         <activity android:name=".Clientes" />
-        <activity android:name=".VistaUsuarios" />
-        <activity android:name=".Registrar" />
         <activity android:name=".Login.Registrar" />
         <activity
             android:name=".ui.login.LoginActivity"

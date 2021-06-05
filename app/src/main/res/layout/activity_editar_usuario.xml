@@ -4,26 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registrar_Usuario">
+    tools:context=".Editar_Usuario">
 
     <LinearLayout
-        android:layout_width="391dp"
-        android:layout_height="720dp"
+        android:layout_width="399dp"
+        android:layout_height="731dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:gravity="center"
-            android:text="REGISTRAR USUARIO"
+            android:text="MODIFICAR USUARIO"
             android:textColor="#3F51B5"
             android:textColorHighlight="#3F51B5"
             android:textSize="24sp"
@@ -40,7 +38,7 @@
             android:layout_height="56dp" />
 
         <EditText
-            android:id="@+id/id_nombre_registrar"
+            android:id="@+id/id_nombre_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -48,7 +46,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/id_cedula_registrar"
+            android:id="@+id/id_cedula_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -56,7 +54,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/id_direccion_registrar"
+            android:id="@+id/id_direccion_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -64,12 +62,12 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/id_celular_registrar"
+            android:id="@+id/id_celular_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Celular n°"
-            android:inputType="phone" />
+            android:inputType="number" />
 
         <View
             android:id="@+id/divider"
@@ -78,7 +76,7 @@
             android:background="?android:attr/listDivider" />
 
         <EditText
-            android:id="@+id/id_usuario_registrar"
+            android:id="@+id/id_usuario_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -86,7 +84,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/id_contrasena"
+            android:id="@+id/id_contrasena_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -94,7 +92,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/id_confirmarcontrasena"
+            android:id="@+id/id_confirmarcontrasena_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -106,29 +104,15 @@
             android:layout_height="61dp" />
 
         <Button
-            android:id="@+id/idguardar_registro"
+            android:id="@+id/id_guardar_modificacion"
             android:layout_width="307dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="GUARDAR REGISTRO" />
+            android:onClick="Modificar"
+            android:text="GUARDAR MODIFICACIÓN" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="74dp" />
-
-        <View
-            android:id="@+id/divider6"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <Button
-            android:id="@+id/id_btnListarUsuarios"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="41dp"
-            android:text="@string/btnListarUsuarios"
-            android:textColor="#040404" />
+            android:layout_height="138dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

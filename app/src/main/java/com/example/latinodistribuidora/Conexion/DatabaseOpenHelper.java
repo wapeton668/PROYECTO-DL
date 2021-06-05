@@ -1,4 +1,4 @@
-package com.example.latinodistribuidora;
+package com.example.latinodistribuidora.Conexion;
 
 import android.content.Context;
 

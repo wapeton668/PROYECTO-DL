@@ -7,8 +7,8 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="688dp"
+        android:layout_width="395dp"
+        android:layout_height="723dp"
         android:gravity="bottom|center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,23 +18,53 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
             android:layout_width="match_parent"
-            android:layout_height="126dp"
+            android:layout_height="93dp"
+            android:gravity="center|top"
+            android:text="LATINO DISTRIBUIDORA"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
             android:gravity="center"
-            android:text="Latino Distribuidora "
-            android:textSize="34sp" />
+            android:text="ACCESO"
+            android:textColor="#3F51B5"
+            android:textColorHighlight="#3F51B5"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="223dp"
-            android:layout_height="323dp"
-            app:srcCompat="@drawable/key" />
+            android:layout_width="239dp"
+            android:layout_height="226dp"
+            android:src="@drawable/key" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="21dp" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="Ingrese los datos de logueo para empezar a trabajar" />
+            android:layout_width="378dp"
+            android:layout_height="55dp"
+            android:text="Por favor, ingrese los datos de logueo para comenzar a trabajar"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -53,18 +83,30 @@
             android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
+            android:id="@+id/button"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:onClick="irMenu"
             android:text="@string/btnIrMenu" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="41dp" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:gravity="bottom|center"
             android:onClick="irRegistrar"
-            android:text="@string/btnirregistrar" />
+            android:text="@string/btnirregistrar"
+            android:textColor="#000000" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

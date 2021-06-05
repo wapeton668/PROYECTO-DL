@@ -1,0 +1,158 @@
+package com.example.latinodistribuidora;
+
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.latinodistribuidora.Conexion.DatabaseAccess;
+import com.example.latinodistribuidora.Modelos.Usuarios;
+
+import java.util.ArrayList;
+
+public class Listar_Usuario extends AppCompatActivity {
+    private ListView lv;
+    private ArrayList<Usuarios> lista = new ArrayList<>();
+    private ArrayAdapter <String> adaptador;
+    private int usuarioseleccionado = -1;
+    private Object mActionMode;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_vista_usuarios);
+        llenarLista();
+        onClick();
+
+    }
+    public void onResume(){
+        super.onResume();
+        lista.removeAll(lista);
+        llenarLista();
+    }
+    public void onClick(){
+        lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                usuarioseleccionado=position;
+                mActionMode = Listar_Usuario.this.startActionMode(amc);
+                view.setSelected(true);
+                return true;
+            }
+        });
+    }
+    private ActionMode.Callback amc = new ActionMode.Callback() {
+        @Override
+        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+            getMenuInflater().inflate(R.menu.opciones, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+            return false;
+        }
+
+        @Override
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+            if(item.getItemId() == R.id.item_eliminar){
+                Alerta_eliminacion();
+                mode.finish();
+
+            }else if(item.getItemId() == R.id.item_modificar){
+                Usuarios usu = lista.get(usuarioseleccionado);
+                Intent in = new Intent(getApplicationContext(), Editar_Usuario.class);
+                in.putExtra("idusuario", usu.getIdusuario());
+                startActivity(in);
+                mode.finish();
+            }
+            return false;
+        }
+
+        @Override
+        public void onDestroyActionMode(ActionMode mode) {
+
+        }
+    };
+
+    private void Alerta_eliminacion(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setMessage("¿Desea eliminar el usuario seleccionado?");
+        alertDialog.setTitle("Eliminar");
+        alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
+        alertDialog.setCancelable(false);
+        alertDialog.setPositiveButton("Sí", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                eliminarUsuario();
+            }
+        });
+        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.cancel();
+            }
+        });
+        alertDialog.show();
+    }
+
+    public void eliminarUsuario(){
+        try{
+            DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+            Usuarios usu = lista.get(usuarioseleccionado);
+            db.openWritable();
+            long resultado = db.eliminarUsuario(usu.getIdusuario());
+            if(resultado > 0){
+                Toast.makeText(getApplicationContext(),"Usuario eliminado satisfactoriamente", Toast.LENGTH_LONG).show();
+                lista.removeAll(lista);
+                llenarLista();
+            }else{
+                Toast.makeText(getApplicationContext(),"Se produjo un error al eliminar usuario", Toast.LENGTH_LONG).show();
+            }
+            db.close();
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Error Fatal eliminado usuario: "+e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void llenarLista(){
+        try{
+            lv = (ListView) findViewById(R.id.lista);
+            DatabaseAccess db = DatabaseAccess.getInstance(getApplicationContext());
+            Cursor c = db.getUsuarios();
+            if (c.moveToFirst()){
+                do {
+                    lista.add( new Usuarios (c.getInt(0),c.getString(1),c.getString(2),
+                            c.getString(5)));
+                }while (c.moveToNext());
+            }
+            String[] arreglo = new String[lista.size()];
+            for (int i = 0;i<arreglo.length;i++){
+                arreglo[i] = "Dato personal: "+lista.get(i).getNombre()+" -- "+lista.get(i).getCi()+"\n"+"Dato de acceso: "+lista.get(i).getUsuario();
+            }
+            adaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1,arreglo);
+            lv.setAdapter(adaptador);
+            db.close();
+
+        }catch (Exception e){
+            Toast.makeText(this, "Error cargando lista: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+}
