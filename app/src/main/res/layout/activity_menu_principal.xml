@@ -94,6 +94,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:drawable/editbox_background"
                 android:foreground="@android:drawable/gallery_thumb"
+                android:onClick="irOpcionesMantenimieto"
                 app:srcCompat="@drawable/config" />
         </TableRow>
 

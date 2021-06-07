@@ -34,7 +34,7 @@ public class Listar_Usuario extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vista_usuarios);
+        setContentView(R.layout.activity_listar_usuarios);
         llenarLista();
         onClick();
 
@@ -134,7 +134,7 @@ public class Listar_Usuario extends AppCompatActivity {
 
     public void llenarLista(){
         try{
-            lv = (ListView) findViewById(R.id.lista);
+            lv = (ListView) findViewById(R.id.id_lista_departamento);
             Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
             Cursor c = db.getUsuarios();
             if (c.moveToFirst()){

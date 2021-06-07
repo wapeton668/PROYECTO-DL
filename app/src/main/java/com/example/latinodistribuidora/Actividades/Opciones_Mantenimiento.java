@@ -8,20 +8,16 @@ import android.view.View;
 
 import com.example.latinodistribuidora.R;
 
-public class MenuPrincipal extends AppCompatActivity {
+public class Opciones_Mantenimiento extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_principal);
+        setContentView(R.layout.activity_opciones_mantenimiento);
     }
 
-    public void irClientes(View view){
-        Intent i = new Intent(this, Clientes.class);
-        startActivity(i);
-    }
-    public void irOpcionesMantenimieto(View view){
-        Intent i = new Intent( this, Opciones_Mantenimiento.class);
+    public void irDepartamentos(View view){
+        Intent i = new Intent(this, Listar_Departamento.class);
         startActivity(i);
     }
 }

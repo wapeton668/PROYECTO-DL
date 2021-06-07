@@ -5,13 +5,13 @@ package com.example.latinodistribuidora.Actividades;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.latinodistribuidora.CRUD.Access_Usuarios;
+import com.example.latinodistribuidora.MainActivity;
 import com.example.latinodistribuidora.R;
 
 public class Registrar_Usuario extends AppCompatActivity {
@@ -29,7 +29,7 @@ public class Registrar_Usuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrar);
+        setContentView(R.layout.activity_registrar_usuario);
 
         nombre = findViewById(R.id.id_nombre_registrar);
         ci = findViewById(R.id.id_cedula_registrar);

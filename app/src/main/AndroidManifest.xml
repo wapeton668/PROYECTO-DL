@@ -9,12 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
+        <activity android:name=".Actividades.Opciones_Mantenimiento"></activity>
+        <activity android:name=".Actividades.Listar_Departamento">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Actividades.MenuPrincipal" />
         <activity android:name=".Actividades.Clientes" />
         <activity android:name=".Actividades.Registrar_Usuario" />
-        <activity android:name=".Actividades.Listar_Usuario"/>
-        <activity android:name=".Actividades.Editar_Usuario"/>
-        <activity android:name=".Actividades.MainActivity">
+        <activity android:name=".Actividades.Listar_Usuario" />
+        <activity android:name=".Actividades.Editar_Usuario" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

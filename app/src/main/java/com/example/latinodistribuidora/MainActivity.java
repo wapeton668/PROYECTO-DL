@@ -1,4 +1,4 @@
-package com.example.latinodistribuidora.Actividades;
+package com.example.latinodistribuidora;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.latinodistribuidora.Actividades.MenuPrincipal;
+import com.example.latinodistribuidora.Actividades.Registrar_Usuario;
 import com.example.latinodistribuidora.CRUD.Access_Usuarios;
 import com.example.latinodistribuidora.R;
 
