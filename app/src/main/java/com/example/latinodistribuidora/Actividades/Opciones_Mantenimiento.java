@@ -20,4 +20,9 @@ public class Opciones_Mantenimiento extends AppCompatActivity {
         Intent i = new Intent(this, Listar_Departamento.class);
         startActivity(i);
     }
+
+    public void irUsuarios(View v){
+        Intent i = new Intent(getApplicationContext(), Listar_Usuario.class);
+        startActivity(i);
+    }
 }

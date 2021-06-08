@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
-            android:layout_height="109dp"
+            android:layout_height="88dp"
             android:gravity="center"
             android:text="OPCIONES DE MANTENIMIENTO"
             android:textColor="#FFFFFF"
@@ -29,7 +29,19 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="26dp" />
+            android:layout_height="17dp" />
+
+        <Button
+            android:id="@+id/id_btnUsuarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:onClick="irUsuarios"
+            android:text="USUARIOS" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="13dp" />
 
         <Button
             android:id="@+id/id_btnDepartamento"
@@ -38,5 +50,6 @@
             android:background="@android:drawable/editbox_background"
             android:onClick="irDepartamentos"
             android:text="Departamentos" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

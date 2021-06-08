@@ -40,11 +40,6 @@ public class Registrar_Usuario extends AppCompatActivity {
         usuario = findViewById(R.id.id_usuario_registrar);
         }
 
-    public void btn_listar(View v){
-        Intent i = new Intent(getApplicationContext(), Listar_Usuario.class);
-        startActivity(i);
-    }
-
     public void btn_registrar(View v){
         if (nombre.getText().toString().trim().isEmpty()) {
             nombre.requestFocus();

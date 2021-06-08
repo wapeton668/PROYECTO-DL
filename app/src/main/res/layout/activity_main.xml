@@ -36,7 +36,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="76dp" />
+            android:layout_height="41dp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:layout_width="359dp"
+            android:layout_width="379dp"
             android:layout_height="249dp"
             android:background="@android:drawable/editbox_background"
             android:gravity="center"
@@ -120,7 +120,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="16dp"
             android:background="@android:drawable/edit_text"
             android:padding="16dp"
             android:paddingStart="16dp"

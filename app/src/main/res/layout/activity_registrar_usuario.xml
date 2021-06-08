@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="106dp"
+            android:layout_height="90dp"
             android:gravity="center"
             android:text="REGISTRAR USUARIO"
             android:textColor="@color/white"
@@ -105,7 +105,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            android:layout_height="25dp" />
 
         <Button
             android:id="@+id/idguardar_registro"
@@ -114,25 +114,6 @@
             android:gravity="center"
             android:onClick="btn_registrar"
             android:text="GUARDAR REGISTRO" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="249dp" />
-
-        <View
-            android:id="@+id/divider6"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <Button
-            android:id="@+id/id_btnListarUsuarios"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btn_listar"
-            android:text="@string/btnListarUsuarios"
-            android:textColor="#040404" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
