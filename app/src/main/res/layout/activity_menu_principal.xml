@@ -46,8 +46,7 @@
                 android:id="@+id/id_btnClientes"
                 android:layout_width="175dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/efecto_btnclientes"
-                android:onClick="irClientes" />
+                android:background="@drawable/efecto_btnclientes" />
 
             <View
                 android:id="@+id/divider7"
