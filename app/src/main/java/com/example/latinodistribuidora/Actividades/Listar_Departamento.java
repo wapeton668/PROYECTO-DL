@@ -58,7 +58,24 @@ public class Listar_Departamento extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_add_depart, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        int id=menuItem.getItemId();
+        if(id==R.id.item_nuevo){
+            ir_a_RegistrarDepartamentos(null);
+            return true;
+        }
+        return super.onOptionsItemSelected(menuItem);
+    }
+
     private ActionMode.Callback amc = new ActionMode.Callback() {
+
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
             getMenuInflater().inflate(R.menu.opciones, menu);
@@ -148,7 +165,7 @@ public class Listar_Departamento extends AppCompatActivity {
             }
             String[] arreglo = new String[lista.size()];
             for (int i = 0;i<arreglo.length;i++){
-                arreglo[i] = "Departamento: "+lista.get(i).getDepartamento();
+                arreglo[i] = "Departamento de: "+lista.get(i).getDepartamento();
             }
             adaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1,arreglo);
             lv.setAdapter(adaptador);
@@ -157,5 +174,10 @@ public class Listar_Departamento extends AppCompatActivity {
         }catch (Exception e){
             Toast.makeText(this, "Error cargando lista: "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+    public void ir_a_RegistrarDepartamentos(View view){
+            Intent i = new Intent(getApplicationContext(), Registrar_Departamento.class);
+            startActivity(i);
+            finish();
     }
 }

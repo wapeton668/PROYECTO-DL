@@ -5,4 +5,5 @@
     <string name="btnmodificar">MODIFICAR REGISTRO</string>
     <string name="btnIrMenu">INICIAR SESION</string>
     <string name="btnListarUsuarios">Listar Usuarios</string>
+    <String name="btnMciudades">CIUDADES</String>
 </resources>
