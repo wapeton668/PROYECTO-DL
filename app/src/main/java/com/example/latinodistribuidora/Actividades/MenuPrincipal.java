@@ -15,11 +15,11 @@ public class MenuPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
     }
-
+/*
     public void irClientes(View view){
-        Intent i = new Intent(this, Clientes.class);
+        Intent i = new Intent(this, Listar_Cliente.class);
         startActivity(i);
-    }
+    }*/
     public void irOpcionesMantenimieto(View view){
         Intent i = new Intent( this, Opciones_Mantenimiento.class);
         startActivity(i);

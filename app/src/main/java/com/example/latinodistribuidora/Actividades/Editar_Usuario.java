@@ -33,10 +33,10 @@ public class Editar_Usuario extends AppCompatActivity {
         contrasena = findViewById(R.id.id_contrasena_modificar);
         confirmarcontrasena = findViewById(R.id.id_confirmarcontrasena_modificar);
 
-        refeljarCampos();
+        reflejarCampos();
     }
 
-    public void refeljarCampos(){
+    public void reflejarCampos(){
         Access_Usuarios db = Access_Usuarios.getInstance(getApplicationContext());
         db.openReadable();
         Cursor c = db.getUsuario_a_modificar(usuarioEditar);
