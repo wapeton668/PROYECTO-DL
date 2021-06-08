@@ -8,8 +8,8 @@
     tools:context=".Actividades.MenuPrincipal">
 
     <LinearLayout
-        android:layout_width="366dp"
-        android:layout_height="661dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="28dp" />
+            android:layout_height="95dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
                 android:id="@+id/id_btnVender"
                 android:layout_width="175dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/efecto_btnventa"/>
+                android:background="@drawable/efecto_btnventa" />
 
             <View
                 android:id="@+id/divider9"
