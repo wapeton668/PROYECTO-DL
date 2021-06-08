@@ -8,10 +8,10 @@ public class Clientes implements Serializable {
     public String ruc;
     public String direccion;
     public String celular;
-    public String ciudad;
+    public int ciudad;
 
     public Clientes(int idcliente,String razon_social, String ruc, String direccion,
-                    String celular, String ciudad){
+                    String celular, int ciudad){
         setIdcliente(idcliente);
         setRazonSocial(razon_social);
         setRuc(ruc);
@@ -54,8 +54,8 @@ public class Clientes implements Serializable {
         this.celular = celular;
     }
 
-    public String getCiudad () {return ciudad; }
+    public int getCiudad () {return ciudad; }
 
-    public void setCiudad(String ciudad) {this.ciudad = ciudad;}
+    public void setCiudad(int ciudad) {this.ciudad = ciudad;}
 
 }

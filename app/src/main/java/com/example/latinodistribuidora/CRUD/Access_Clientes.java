@@ -11,7 +11,7 @@ import com.example.latinodistribuidora.Conexion.DatabaseOpenHelper;
 public class Access_Clientes {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
-    private static Access_Usuarios instance;
+    private static Access_Clientes instance;
     Cursor registros = null;
 
     /**
@@ -29,9 +29,9 @@ public class Access_Clientes {
      * @param context the Context
      * @return the instance of DabaseAccess
      */
-    public static Access_Usuarios getInstance(Context context) {
+    public static Access_Clientes getInstance(Context context) {
         if (instance == null) {
-            instance = new Access_Usuarios(context);
+            instance = new Access_Clientes(context);
         }
         return instance;
     }
