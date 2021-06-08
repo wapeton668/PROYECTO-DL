@@ -112,6 +112,7 @@
                     android:id="@+id/button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:drawable/editbox_background"
                     android:onClick="IniciarSesion"
                     android:text="@string/btnIrMenu" />
             </LinearLayout>

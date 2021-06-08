@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:gravity="bottom|center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +18,7 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="91dp"
+            android:layout_height="95dp"
             android:gravity="center"
             android:text="LISTA DE DEPARTAMENTOS"
             android:textColor="#FFFFFF"
@@ -34,7 +35,16 @@
             style="@style/Widget.AppCompat.ListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="?android:attr/actionModeSplitBackground" />
+            android:layout_gravity="center|top"
+            android:divider="?android:attr/textCursorDrawable"
+            android:foregroundGravity="bottom"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp" />
 
     </LinearLayout>
 

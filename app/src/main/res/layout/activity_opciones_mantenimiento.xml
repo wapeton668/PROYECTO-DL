@@ -29,27 +29,41 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="17dp" />
+            android:layout_height="15dp" />
 
-        <Button
-            android:id="@+id/id_btnUsuarios"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:onClick="irUsuarios"
-            android:text="USUARIOS" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irUsuarios"
+                android:text="USUARIOS" />
 
-        <Button
-            android:id="@+id/id_btnDepartamento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:onClick="irDepartamentos"
-            android:text="Departamentos" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="13dp" />
+
+            <Button
+                android:id="@+id/id_btnDepartamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irDepartamentos"
+                android:text="Departamentos" />
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

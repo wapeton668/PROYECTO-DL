@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="92dp"
+            android:layout_height="99dp"
             android:gravity="center"
             android:text="MODIFICAR USUARIO"
             android:textColor="#FFFFFF"
@@ -31,17 +31,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:orientation="vertical">
+            android:gravity="bottom|center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="18dp" />
+                android:layout_height="23dp" />
 
             <EditText
                 android:id="@+id/id_nombre_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Nombre y Apellido"
                 android:inputType="textPersonName"
@@ -50,7 +57,7 @@
             <EditText
                 android:id="@+id/id_cedula_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="59dp"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Cedula de identidad"
                 android:inputType="number"
@@ -59,7 +66,7 @@
             <EditText
                 android:id="@+id/id_direccion_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Dirección"
                 android:inputType="textPersonName"
@@ -68,7 +75,7 @@
             <EditText
                 android:id="@+id/id_celular_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Celular n°"
                 android:inputType="number"
@@ -76,7 +83,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="match_parent" />
 
             <View
                 android:id="@+id/divider"
@@ -86,12 +93,12 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="18dp" />
+                android:layout_height="match_parent" />
 
             <EditText
                 android:id="@+id/id_usuario_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Usuario"
                 android:inputType="textPersonName"
@@ -100,7 +107,7 @@
             <EditText
                 android:id="@+id/id_contrasena_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
@@ -109,16 +116,21 @@
             <EditText
                 android:id="@+id/id_confirmarcontrasena_modificar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:ems="10"
                 android:hint="Confirmar contraseña"
                 android:inputType="textPassword"
                 android:textSize="20sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
             <Button
                 android:id="@+id/id_guardar_modificacion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/editbox_background"
                 android:onClick="Modificar"
                 android:text="GUARDAR MODIFICACIÓN" />
 
