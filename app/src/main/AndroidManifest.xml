@@ -12,7 +12,6 @@
         <activity android:name=".Actividades.Opciones_Mantenimiento"/>
         <activity android:name=".Actividades.Listar_Departamento"/>
         <activity android:name=".Actividades.MenuPrincipal" />
-        <activity android:name=".Actividades.Clientes" />
         <activity android:name=".Actividades.Registrar_Usuario" />
         <activity android:name=".Actividades.Listar_Usuario" />
         <activity android:name=".Actividades.Editar_Usuario" />
