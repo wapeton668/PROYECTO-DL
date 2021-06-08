@@ -60,7 +60,7 @@ public class Listar_Departamento extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_add_depart, menu);
+        getMenuInflater().inflate(R.menu.opcion_add, menu);
         return true;
     }
 
@@ -78,7 +78,7 @@ public class Listar_Departamento extends AppCompatActivity {
 
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            getMenuInflater().inflate(R.menu.opciones, menu);
+            getMenuInflater().inflate(R.menu.opciones_del_upd, menu);
             return true;
         }
 

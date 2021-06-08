@@ -59,7 +59,7 @@ public class Listar_Usuario extends AppCompatActivity {
     private ActionMode.Callback amc = new ActionMode.Callback() {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            getMenuInflater().inflate(R.menu.opciones, menu);
+            getMenuInflater().inflate(R.menu.opciones_del_upd, menu);
             return true;
         }
 
