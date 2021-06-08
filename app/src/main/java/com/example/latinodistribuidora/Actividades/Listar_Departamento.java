@@ -77,10 +77,11 @@ public class Listar_Departamento extends AppCompatActivity {
                 mode.finish();
             } else if (item.getItemId() == R.id.item_modificar) {
                 Departamentos departamentos = lista.get(departamentoseleccionado);
-                Intent in = new Intent(getApplicationContext(), Editar_Usuario.class);
+                Intent in = new Intent(getApplicationContext(), Editar_Departamento.class);
                 in.putExtra("iddepartamento", departamentos.getIddepartamento());
                 startActivity(in);
                 mode.finish();
+                finish();
             }
             return false;
         }

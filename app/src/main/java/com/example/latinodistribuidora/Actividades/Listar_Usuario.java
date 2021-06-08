@@ -80,6 +80,7 @@ public class Listar_Usuario extends AppCompatActivity {
                 in.putExtra("idusuario", usu.getIdusuario());
                 startActivity(in);
                 mode.finish();
+                finish();
             }
             return false;
         }

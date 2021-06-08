@@ -102,5 +102,13 @@ public class Editar_Usuario extends AppCompatActivity {
         usuario.setText("");
         contrasena.setText("");
         confirmarcontrasena.setText("");
+        finish();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(this, Listar_Usuario.class);
+        startActivity(i);
+        finish();
     }
 }
