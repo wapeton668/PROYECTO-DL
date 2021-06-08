@@ -103,7 +103,7 @@ public class Listar_Usuario extends AppCompatActivity {
                 eliminarUsuario();
             }
         });
-        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener()
+        alertDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
             {
