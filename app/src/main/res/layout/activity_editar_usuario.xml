@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_activity"
     tools:context=".Actividades.Editar_Usuario">
 
     <LinearLayout
+        android:id="@+id/linearLayout10"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:background="#673AB7"
         android:gravity="center|top"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,121 +20,122 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="99dp"
+            android:layout_height="89dp"
             android:gravity="center"
-            android:text="MODIFICAR USUARIO"
+            android:text="MODIFICAR VENDEDOR"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <LinearLayout
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+        <EditText
+            android:id="@+id/id_nombre_modificar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="bottom|center"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp">
+            android:ems="10"
+            android:hint="Nombre y Apellido"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="23dp" />
+        <EditText
+            android:id="@+id/id_cedula_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Cedula de identidad"
+            android:inputType="number"
+            android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/id_nombre_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Nombre y Apellido"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
+        <EditText
+            android:id="@+id/id_direccion_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Dirección"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/id_cedula_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Cedula de identidad"
-                android:inputType="number"
-                android:textSize="20sp" />
+        <EditText
+            android:id="@+id/id_celular_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Celular n°"
+            android:inputType="number"
+            android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/id_direccion_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Dirección"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/id_celular_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Celular n°"
-                android:inputType="number"
-                android:textSize="20sp" />
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="11dp"
+            android:background="?android:attr/listDivider" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="11dp"
-                android:background="?android:attr/listDivider" />
+        <EditText
+            android:id="@+id/id_usuario_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="textPersonName"
+            android:textSize="24sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/id_contrasena_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/id_usuario_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Usuario"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
+        <EditText
+            android:id="@+id/id_confirmarcontrasena_modificar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Confirmar contraseña"
+            android:inputType="textPassword"
+            android:textSize="24sp" />
 
-            <EditText
-                android:id="@+id/id_contrasena_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:textSize="20sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
 
-            <EditText
-                android:id="@+id/id_confirmarcontrasena_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="Confirmar contraseña"
-                android:inputType="textPassword"
-                android:textSize="20sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="24dp" />
-
-            <Button
-                android:id="@+id/id_guardar_modificacion"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:drawable/editbox_background"
-                android:onClick="Modificar"
-                android:text="@string/btnmodificar" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/id_guardar_modificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:onClick="Modificar"
+            android:text="@string/btnmodificar" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

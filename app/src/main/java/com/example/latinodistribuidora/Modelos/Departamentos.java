@@ -11,6 +11,8 @@ public class Departamentos implements Serializable {
         setIddepartamento(iddepartamento);
         setDepartamento(departamento);
     }
+    public Departamentos (){
+    }
 
     public int getIddepartamento() {
         return iddepartamento;

@@ -95,7 +95,7 @@ public class Listar_Usuario extends AppCompatActivity {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setMessage("¿Desea eliminar el usuario seleccionado?");
         alertDialog.setTitle("Eliminar");
-        alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
+        alertDialog.setIcon(android.R.drawable.ic_delete);
         alertDialog.setCancelable(false);
         alertDialog.setPositiveButton("Sí", new DialogInterface.OnClickListener()
         {
@@ -146,9 +146,9 @@ public class Listar_Usuario extends AppCompatActivity {
             }
             String[] arreglo = new String[lista.size()];
             for (int i = 0;i<arreglo.length;i++){
-                arreglo[i] = "Dato personal: "+lista.get(i).getNombre()+" -- "+lista.get(i).getCi()+"\n"+"Dato de acceso: "+lista.get(i).getUsuario();
+                arreglo[i] = lista.get(i).getNombre()+" -- "+lista.get(i).getCi()+"\n"+"Usuario utilizado: "+lista.get(i).getUsuario();
             }
-            adaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1,arreglo);
+            adaptador = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview_item_ld,arreglo);
             lv.setAdapter(adaptador);
             db.close();
 

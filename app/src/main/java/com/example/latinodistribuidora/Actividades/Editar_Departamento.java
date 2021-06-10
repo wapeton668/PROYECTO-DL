@@ -37,6 +37,7 @@ public class Editar_Departamento extends AppCompatActivity {
         try {
             if(c.moveToNext()){
                 departamento.setText(c.getString(1));
+                departamento.requestFocus();
 
             }
         }finally {}

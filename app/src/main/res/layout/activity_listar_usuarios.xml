@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_activity"
     android:scrollbars="horizontal|vertical"
     tools:context=".Actividades.Listar_Usuario">
 
     <LinearLayout
+        android:id="@+id/linearLayout9"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:background="#673AB7"
         android:gravity="center|top"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,15 +23,34 @@
             android:layout_width="match_parent"
             android:layout_height="89dp"
             android:gravity="center"
-            android:text="LISTA DE USUARIOS"
+            android:text="LISTADO DE VENDEDORES"
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="5dp"
+        android:foregroundGravity="top"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space">
 
         <ListView
             android:id="@+id/id_lista_departamento"
@@ -48,6 +67,6 @@
             android:paddingEnd="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp" />
-
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

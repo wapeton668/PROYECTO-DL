@@ -25,4 +25,8 @@ public class Opciones_Mantenimiento extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), Listar_Usuario.class);
         startActivity(i);
     }
+    public void irRegistrarCiudad(View view){
+        Intent i = new Intent(getApplicationContext(), Listar_Ciudad.class);
+        startActivity(i);
+    }
 }

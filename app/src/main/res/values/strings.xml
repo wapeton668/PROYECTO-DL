@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Fact-Express</string>
-    <string name="btnirregistrar">REGISTRAR</string>
+    <string name="btnirregistrar">REGISTRAR VENDEDOR</string>
     <string name="btnregistrar">GUARDAR REGISTRO</string>
     <string name="btnmodificar">MODIFICAR REGISTRO</string>
     <string name="btnIrMenu">INICIAR SESION</string>
