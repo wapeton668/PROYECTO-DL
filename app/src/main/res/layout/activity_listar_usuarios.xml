@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#673AB7"
+        android:background="#3F51B5"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,36 +21,25 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="89dp"
+            android:layout_height="50dp"
             android:gravity="center"
-            android:text="LISTADO DE VENDEDORES"
+            android:text="VENDEDORES"
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
-    <Space
-        android:id="@+id/space"
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-        android:layout_marginBottom="5dp"
-        android:foregroundGravity="top"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
 
     <LinearLayout
         android:id="@+id/linearLayout8"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout22"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/space">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
         <ListView
             android:id="@+id/id_lista_departamento"
@@ -58,8 +47,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center|top"
-            android:divider="?android:attr/textCursorDrawable"
-            android:foregroundGravity="bottom"
             android:padding="10dp"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
@@ -67,6 +54,32 @@
             android:paddingEnd="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout22"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/divider10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/id_vend_pie"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

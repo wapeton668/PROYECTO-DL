@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -30,11 +31,13 @@ public class Listar_Departamento extends AppCompatActivity {
     private ArrayAdapter<String> adaptador;
     private int departamentoseleccionado = -1;
     private Object mActionMode;
+    private TextView pie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_departamento);
+        pie = findViewById(R.id.id_dep_pie);
         llenarLista();
         onClick();
     }
@@ -89,7 +92,7 @@ public class Listar_Departamento extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if (item.getItemId() == R.id.item_eliminar) {
+            if (item.getItemId() == R.id.item_inactivar) {
                 AlertaEliminacion();
                 mode.finish();
             } else if (item.getItemId() == R.id.item_modificar) {
@@ -169,6 +172,14 @@ public class Listar_Departamento extends AppCompatActivity {
             }
             adaptador = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview_item_ld,arreglo);
             lv.setAdapter(adaptador);
+            int cant = lv.getCount();
+            if(cant==0){
+                pie.setText("Lista vacía");
+            }else if(cant==1){
+                pie.setText(cant+" departamento listado");
+            }else{
+                pie.setText(cant+" departamentos listados");
+            }
             db.close();
 
         }catch (Exception e){

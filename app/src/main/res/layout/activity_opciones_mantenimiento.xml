@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#673AB7"
+        android:background="#3F51B5"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,172 +20,178 @@
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
-            android:layout_height="88dp"
+            android:layout_height="50dp"
             android:gravity="center"
             android:text="OPCIONES DE MANTENIMIENTO"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center|top"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:paddingStart="10dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
-        <Button
-            android:id="@+id/id_btnEmpresa"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:text="EMPRESA"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:gravity="center|top"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnEmpresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaEmpresa"
+                android:text="MI EMPRESA"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/id_btnTimbrado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:text="TIMBRADO"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnTimbrado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaTimbrado"
+                android:text="TIMBRADO"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/id_btnPE"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:text="PUNTO DE EMISIÓN"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnPE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:text="PUNTO DE EMISIÓN"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
-        <Button
-            android:id="@+id/id_btnUsuarios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:onClick="irUsuarios"
-            android:text="VENDEDORES"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaUsuarios"
+                android:text="VENDEDORES"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/id_btnDepartamento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:onClick="irDepartamentos"
-            android:text="Departamentos"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnDepartamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaDepartamentos"
+                android:text="Departamentos"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/id_btnCiudades"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:onClick="irRegistrarCiudad"
-            android:text="CIUDADES"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnCiudades"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaCiudad"
+                android:text="CIUDADES"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <View
-            android:id="@+id/divider6"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
-        <Button
-            android:id="@+id/id_btnDivision"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:text="DIVISIÓN DE PRODUCTOS"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnDivision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaDivision"
+                android:text="CLASIFICACIÓN DE PRODUCTOS"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/id_btnIVA"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:text="I.V.A."
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            <Button
+                android:id="@+id/id_btnIVA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaIVA"
+                android:text="IMPUESTO AL VALOR AGREGADO"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/id_btnUM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:text="UNIDADES DE MEDIDA"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/id_btnUM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:onClick="irListaUM"
+                android:text="UNIDADES DE MEDIDA"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

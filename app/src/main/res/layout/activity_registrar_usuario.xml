@@ -9,8 +9,8 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="91dp"
-        android:background="#673AB7"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:gravity="center"
             android:text="CREAR VENDEDOR"
             android:textColor="@color/white"
@@ -31,111 +31,110 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center|top"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:paddingStart="10dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <EditText
-            android:id="@+id/id_nombre_registrar"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Nombre y Apellido"
-            android:inputType="textPersonName"
+            android:gravity="center|top"
+            android:orientation="vertical"
             android:padding="10dp"
             android:paddingStart="10dp"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:textSize="24sp" />
+            android:paddingBottom="10dp">
 
-        <EditText
-            android:id="@+id/id_cedula_registrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Cedula de identidad"
-            android:inputType="number"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/id_nombre_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nombre y Apellido"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/id_direccion_registrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Dirección"
-            android:inputType="textPersonName"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/id_cedula_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Cedula de identidad"
+                android:inputType="number"
+                android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/id_celular_registrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Celular n°"
-            android:inputType="phone"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/id_direccion_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Dirección"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="?android:attr/listDivider" />
+            <EditText
+                android:id="@+id/id_celular_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Celular n°"
+                android:inputType="phone"
+                android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/id_usuario_registrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Usuario"
-            android:inputType="textPersonName"
-            android:textSize="24sp" />
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="?android:attr/listDivider" />
 
-        <EditText
-            android:id="@+id/id_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/id_usuario_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Usuario"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/id_confirmarcontrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Confirmar contraseña"
-            android:inputType="textPassword"
-            android:textSize="24sp" />
+            <EditText
+                android:id="@+id/id_contrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textSize="20sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            <EditText
+                android:id="@+id/id_confirmarcontrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/idguardar_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:gravity="center"
-            android:onClick="btn_registrar"
-            android:text="GUARDAR REGISTRO" />
-    </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <Button
+                android:id="@+id/idguardar_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:gravity="center"
+                android:onClick="btn_registrar"
+                android:text="GUARDAR REGISTRO" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

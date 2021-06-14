@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.latinodistribuidora.Actividades.MenuPrincipal;
@@ -13,7 +16,7 @@ import com.example.latinodistribuidora.Actividades.Registrar_Usuario;
 import com.example.latinodistribuidora.CRUD.Access_Usuarios;
 import com.example.latinodistribuidora.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<Public> extends AppCompatActivity {
     public EditText usuario, contrasena;
 
     @Override
@@ -24,14 +27,31 @@ public class MainActivity extends AppCompatActivity {
         contrasena = findViewById(R.id.id_iniciar_contrasena);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.opcion_add, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem){
+        int id=menuItem.getItemId();
+        if(id==R.id.item_nuevo){
+            irRegistrar(null);
+            return true;
+        }
+        return super.onOptionsItemSelected(menuItem);
+    }
+
     public void irRegistrar(View view){
         Intent i = new Intent(this, Registrar_Usuario.class);
         startActivity(i);
         finish();
     }
 
+
     public void IniciarSesion (View view){
-        if(usuario.getText().toString().trim().isEmpty()){
+       if(usuario.getText().toString().trim().isEmpty()){
             usuario.requestFocus();
         }else if(contrasena.getText().toString().trim().isEmpty()){
             contrasena.requestFocus();

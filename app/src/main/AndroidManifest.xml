@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.latinodistribuidora">
 
     <application
@@ -9,18 +10,76 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".Actividades.Registrar_Ciudad" />
-        <activity android:name=".Actividades.Registrar_Departamento" />
-        <activity android:name=".Actividades.Editar_Departamento" />
-        <activity android:name=".Actividades.Editar_Ciudad" />
-        <activity android:name=".Actividades.Listar_Ciudad" />
-        <activity android:name=".Actividades.Opciones_Mantenimiento" />
-        <activity android:name=".Actividades.Listar_Departamento" />
-        <activity android:name=".Actividades.MenuPrincipal" />
-        <activity android:name=".Actividades.Registrar_Usuario" />
-        <activity android:name=".Actividades.Listar_Usuario" />
-        <activity android:name=".Actividades.Editar_Usuario" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Actividades.Listar_PE"></activity>
+        <activity android:name=".Actividades.Editar_Timbrado" />
+        <activity android:name=".Actividades.Registar_Timbrado" />
+        <activity android:name=".Actividades.Listar_Timbrado" />
+        <activity android:name=".Actividades.ListarUM" />
+        <activity android:name=".Actividades.Editar_UM" />
+        <activity android:name=".Actividades.Registrar_UM" />
+        <activity
+            android:name=".Actividades.Editar_iva"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Registrar_iva"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Listar_IVA"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Editar_Division"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Registrar_Division"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Listar_Division"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Editar_Empresa"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Registrar_Empresa"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Listar_Empresa"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Registrar_Ciudad"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Registrar_Departamento"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Editar_Departamento"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Editar_Ciudad"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Listar_Ciudad"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Opciones_Mantenimiento"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Listar_Departamento"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.MenuPrincipal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Registrar_Usuario"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Listar_Usuario"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Actividades.Editar_Usuario"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#673AB7"
+        android:background="#3F51B5"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,109 +20,117 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="118dp"
+            android:layout_height="40dp"
             android:layout_gravity="center|center_vertical"
             android:gravity="center"
             android:text="DISTRIBUIDORA LATINO"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-        <Space
+        <View
+            android:id="@+id/divider16"
             android:layout_width="match_parent"
-            android:layout_height="45dp" />
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="OPCIONES DE TRABAJO"
+            android:text="Opciones principales"
             android:textColor="#FFFFFF"
             android:textColorHighlight="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <Space
+        <View
+            android:id="@+id/divider9"
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="#3F51B5" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center|top"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout26"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="156dp"
-            android:layout_gravity="center"
-            android:foregroundGravity="center"
-            android:gravity="center"
-            android:padding="5dp"
-            android:paddingStart="5dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Button
+            <ImageButton
+                android:id="@+id/id_btnVenta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/venta" />
+
+            <ImageButton
+                android:id="@+id/id_btnProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Productos"
+                app:srcCompat="@drawable/product" />
+
+            <ImageButton
                 android:id="@+id/id_btnClientes"
-                android:layout_width="175dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/efecto_btnclientes" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Clientes"
+                app:srcCompat="@drawable/cliente" />
 
-            <View
-                android:id="@+id/divider7"
-                android:layout_width="15dp"
-                android:layout_height="match_parent" />
+            <ImageButton
+                android:id="@+id/id_btnConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Mantenimientos"
+                android:onClick="irOpcionesMantenimieto"
+                app:srcCompat="@drawable/config" />
+        </LinearLayout>
+    </ScrollView>
 
-            <Button
-                android:id="@+id/id_btnProductos"
-                android:layout_width="175dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/efecto_btnproductos" />
+    <LinearLayout
+        android:id="@+id/linearLayout26"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        </TableRow>
-
-        <Space
+        <View
+            android:id="@+id/divider13"
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
 
-        <TableRow
+        <Button
+            android:id="@+id/id_btnCS"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
-            android:layout_height="156dp"
-            android:gravity="center">
+            android:layout_height="35dp"
+            android:onClick="CerrarSesion"
+            android:text="@string/btnIrInicio"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/id_btnVender"
-                android:layout_width="175dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/efecto_btnventa" />
-
-            <View
-                android:id="@+id/divider9"
-                android:layout_width="15dp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/id_btnMantenimientos"
-                android:layout_width="175dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/efecto_btnmantenimiento"
-                android:onClick="irOpcionesMantenimieto" />
-
-        </TableRow>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="19dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

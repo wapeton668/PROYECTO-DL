@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,12 +30,14 @@ public class Listar_Usuario extends AppCompatActivity {
     private ArrayAdapter <String> adaptador;
     private int usuarioseleccionado = -1;
     private Object mActionMode;
+    private TextView pie;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_usuarios);
+        pie = findViewById(R.id.id_vend_pie);
         llenarLista();
         onClick();
 
@@ -70,7 +73,7 @@ public class Listar_Usuario extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if(item.getItemId() == R.id.item_eliminar){
+            if(item.getItemId() == R.id.item_inactivar){
                 Alerta_eliminacion();
                 mode.finish();
 
@@ -150,6 +153,14 @@ public class Listar_Usuario extends AppCompatActivity {
             }
             adaptador = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview_item_ld,arreglo);
             lv.setAdapter(adaptador);
+            int cant = lv.getCount();
+            if(cant==0){
+                pie.setText("Lista vacía");
+            }else if(cant==1){
+                pie.setText(cant+" vendedor listado");
+            }else{
+                pie.setText(cant+" vendedores listados");
+            }
             db.close();
 
         }catch (Exception e){

@@ -14,12 +14,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.latinodistribuidora.CRUD.Access_Ciudades;
-import com.example.latinodistribuidora.CRUD.Access_Departamentos;
 import com.example.latinodistribuidora.Modelos.Ciudades;
-import com.example.latinodistribuidora.Modelos.Departamentos;
 import com.example.latinodistribuidora.R;
 
 import java.util.ArrayList;
@@ -30,11 +29,13 @@ public class Listar_Ciudad extends AppCompatActivity {
     private ArrayAdapter<String> adaptador;
     private int ciudadseleccionado = -1;
     private Object mActionMode;
+    private TextView pie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_ciudad);
+        pie = findViewById(R.id.id_ciu_pie);
         llenarLista();
         onClick();
     }
@@ -88,22 +89,16 @@ public class Listar_Ciudad extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if (item.getItemId() == R.id.item_eliminar) {
+            if (item.getItemId() == R.id.item_inactivar) {
                 AlertaEliminacion();
                 mode.finish();
             } else if (item.getItemId() == R.id.item_modificar) {
-                try{
                     Ciudades ciudades = lista.get(ciudadseleccionado);
                     Intent in = new Intent(getApplicationContext(), Editar_Ciudad.class);
                     in.putExtra("idciudad", ciudades.getIdciudad());
                     startActivity(in);
                     mode.finish();
                     finish();
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(), "error pulsando editar: "
-                            +e.getMessage(),Toast.LENGTH_LONG).show();
-                }
-
             }
             return false;
         }
@@ -175,6 +170,14 @@ public class Listar_Ciudad extends AppCompatActivity {
             }
             adaptador = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview_item_ld,arreglo);
             lv.setAdapter(adaptador);
+            int cant = lv.getCount();
+            if(cant==0){
+                pie.setText("Lista vacía");
+            }else if(cant==1){
+                pie.setText(cant+" ciudad listada");
+            }else{
+                pie.setText(cant+" ciudades listadas");
+            }
             db.close();
 
         }catch (Exception e){

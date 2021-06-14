@@ -4,7 +4,7 @@
     <item
         android:icon="@android:drawable/ic_menu_delete"
         android:title="Eliminar"
-        android:id="@+id/item_eliminar"
+        android:id="@+id/item_inactivar"
         app:showAsAction="always"
         />
 

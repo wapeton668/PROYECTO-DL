@@ -3,6 +3,6 @@
     <string name="btnirregistrar">REGISTRAR VENDEDOR</string>
     <string name="btnregistrar">GUARDAR REGISTRO</string>
     <string name="btnmodificar">MODIFICAR REGISTRO</string>
-    <string name="btnIrMenu">INICIAR SESION</string>
-    <string name="btnListarUsuarios">Listar Usuarios</string>
+    <string name="btnIrMenu">INICIAR SESIÓN</string>
+    <string name="btnIrInicio">CERRAR SESIÓN</string>
 </resources>

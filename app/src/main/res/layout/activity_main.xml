@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="412dp"
-        android:layout_height="91dp"
-        android:gravity="center|top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,76 +21,72 @@
             android:id="@+id/textView"
             style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:gravity="center"
             android:text="LATINO DISTRIBUIDORA"
             android:textColor="#FFFFFF"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <View
             android:id="@+id/divider4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="1dp"
             android:background="?android:attr/listDivider" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:foregroundGravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="15dp"
-        android:paddingStart="15dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="15dp"
-        android:paddingEnd="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout3">
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="ACCESO"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#3F51B5"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="295dp"
-            android:layout_height="262dp"
-            android:src="@drawable/key" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:drawable/editbox_background"
+            android:layout_height="wrap_content"
+            android:gravity="top"
             android:orientation="vertical"
-            android:padding="15dp">
+            android:padding="10dp"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="118dp"
+                app:srcCompat="@drawable/icon_app" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fact-Express"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="Por favor, ingrese los datos de logueo para comenzar a trabajar"
-                android:textColor="@color/design_default_color_error" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="21dp" />
+                android:textColor="#4CAF50"
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/id_iniciar_usuario"
@@ -99,7 +95,7 @@
                 android:ems="10"
                 android:hint="Ingrese usuario"
                 android:inputType="textPersonName"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -109,12 +105,12 @@
                 android:ems="10"
                 android:hint="Ingrese contraseña"
                 android:inputType="textPassword"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="21dp" />
+                android:layout_height="10dp" />
 
             <Button
                 android:id="@+id/button"
@@ -122,54 +118,9 @@
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
                 android:onClick="IniciarSesion"
-                android:text="@string/btnIrMenu" />
+                android:text="@string/btnIrMenu"
+                android:textSize="12sp" />
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout5">
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:background="@android:drawable/edit_text"
-            android:padding="16dp"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp" />
-
-        <View
-            android:id="@+id/divider5"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <Button
-            android:id="@+id/button2"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="bottom|center"
-            android:onClick="irRegistrar"
-            android:padding="16dp"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:text="@string/btnirregistrar"
-            android:textColor="#000000" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
