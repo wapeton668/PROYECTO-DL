@@ -1,0 +1,84 @@
+package com.example.latinodistribuidora.Modelos;
+
+import java.io.Serializable;
+
+public class PuntoEmision implements Serializable {
+
+    public int idemision;
+    public String establecimiento;
+    public String pe;
+    public String direccion;
+    public String desde;
+    public String hasta;
+    public String estado;
+
+    public PuntoEmision(int idemision, String establecimiento, String pe, String direccion, String desde, String hasta, String estado) {
+        this.idemision = idemision;
+        this.establecimiento = establecimiento;
+        this.pe = pe;
+        this.direccion = direccion;
+        this.desde = desde;
+        this.hasta = hasta;
+        this.estado = estado;
+    }
+
+    public PuntoEmision(){
+
+    }
+
+    public int getIdemision() {
+        return idemision;
+    }
+
+    public void setIdemision(int idemision) {
+        this.idemision = idemision;
+    }
+
+    public String getEstablecimiento() {
+        return establecimiento;
+    }
+
+    public void setEstablecimiento(String establecimiento) {
+        this.establecimiento = establecimiento;
+    }
+
+    public String getPe() {
+        return pe;
+    }
+
+    public void setPe(String pe) {
+        this.pe = pe;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getDesde() {
+        return desde;
+    }
+
+    public void setDesde(String desde) {
+        this.desde = desde;
+    }
+
+    public String getHasta() {
+        return hasta;
+    }
+
+    public void setHasta(String hasta) {
+        this.hasta = hasta;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+}

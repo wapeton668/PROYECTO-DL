@@ -56,10 +56,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/house"
                 android:onClick="irListaEmpresa"
                 android:text="MI EMPRESA"
                 android:textSize="18sp"
                 android:textStyle="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAE6E6"
+                android:gravity="center"
+                android:text="Comprobantes" />
 
             <Space
                 android:layout_width="match_parent"
@@ -70,6 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/timbrado"
                 android:onClick="irListaTimbrado"
                 android:text="TIMBRADO"
                 android:textSize="18sp"
@@ -84,6 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/pe"
+                android:onClick="irListaPE"
                 android:text="PUNTO DE EMISIÓN"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -92,11 +108,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
-            <View
-                android:id="@+id/divider2"
+            <TextView
+                android:id="@+id/textView35"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="wrap_content"
+                android:background="#EAE6E6"
+                android:gravity="center" />
 
             <Space
                 android:layout_width="match_parent"
@@ -107,10 +124,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/vendedor"
                 android:onClick="irListaUsuarios"
                 android:text="VENDEDORES"
                 android:textSize="18sp"
                 android:textStyle="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAE6E6"
+                android:gravity="center"
+                android:text="Ubicación" />
 
             <Space
                 android:layout_width="match_parent"
@@ -121,6 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/ubicacion"
                 android:onClick="irListaDepartamentos"
                 android:text="Departamentos"
                 android:textSize="18sp"
@@ -135,6 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/ubicacion"
                 android:onClick="irListaCiudad"
                 android:text="CIUDADES"
                 android:textSize="18sp"
@@ -144,11 +176,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
-            <View
-                android:id="@+id/divider6"
+            <TextView
+                android:id="@+id/textView37"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="wrap_content"
+                android:background="#EAE6E6"
+                android:gravity="center"
+                android:text="Productos" />
 
             <Space
                 android:layout_width="match_parent"
@@ -159,6 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/clasific"
                 android:onClick="irListaDivision"
                 android:text="CLASIFICACIÓN DE PRODUCTOS"
                 android:textSize="18sp"
@@ -173,6 +208,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/iva"
                 android:onClick="irListaIVA"
                 android:text="IMPUESTO AL VALOR AGREGADO"
                 android:textSize="18sp"
@@ -187,6 +223,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@drawable/um"
                 android:onClick="irListaUM"
                 android:text="UNIDADES DE MEDIDA"
                 android:textSize="18sp"

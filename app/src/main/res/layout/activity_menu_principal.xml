@@ -74,33 +74,72 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/id_btnVenta"
+            <Button
+                android:id="@+id/btnVender"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/venta" />
+                android:background="@android:drawable/editbox_background"
+                android:drawableTop="@drawable/venta"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="VENDER" />
 
-            <ImageButton
-                android:id="@+id/id_btnProducto"
+            <Button
+                android:id="@+id/btnProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="Productos"
-                app:srcCompat="@drawable/product" />
+                android:background="@android:drawable/editbox_background_normal"
+                android:drawableTop="@drawable/product"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="PRODUCTOS" />
 
-            <ImageButton
-                android:id="@+id/id_btnClientes"
+            <Button
+                android:id="@+id/id_btnClient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="Clientes"
-                app:srcCompat="@drawable/cliente" />
+                android:background="@android:drawable/editbox_background_normal"
+                android:drawableTop="@drawable/cliente"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="CLIENTES" />
 
-            <ImageButton
-                android:id="@+id/id_btnConfig"
+            <Button
+                android:id="@+id/id_btnMant"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="Mantenimientos"
+                android:background="@android:drawable/editbox_background_normal"
+                android:drawableTop="@drawable/config"
+                android:drawablePadding="5dp"
                 android:onClick="irOpcionesMantenimieto"
-                app:srcCompat="@drawable/config" />
+                android:padding="5dp"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:text="MANTENIMIENTOS" />
+
         </LinearLayout>
     </ScrollView>
 

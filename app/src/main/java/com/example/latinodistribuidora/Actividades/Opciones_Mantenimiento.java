@@ -53,4 +53,9 @@ public class Opciones_Mantenimiento extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), Listar_Timbrado.class);
         startActivity(i);
     }
+
+    public void irListaPE(View view){
+        Intent i = new Intent(getApplicationContext(), Listar_PE.class);
+        startActivity(i);
+    }
 }

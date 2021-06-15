@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".Actividades.Listar_PE"></activity>
+        <activity android:name=".Actividades.Editar_PE"></activity>
+        <activity android:name=".Actividades.Registrar_PE" />
+        <activity android:name=".Actividades.Listar_PE" />
         <activity android:name=".Actividades.Editar_Timbrado" />
         <activity android:name=".Actividades.Registar_Timbrado" />
         <activity android:name=".Actividades.Listar_Timbrado" />

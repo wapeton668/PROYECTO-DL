@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actividades.Editar_Timbrado">
+    tools:context=".Actividades.Registrar_PE">
 
     <LinearLayout
-        android:id="@+id/linearLayout43"
+        android:id="@+id/linearLayout46"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#3F51B5"
@@ -17,13 +17,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/textView32"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="MODIFICAR TIMBRADO"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="@color/white"
+            android:text="CREAR PUNTO DE EMISIÓN"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -41,7 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout43">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout46">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,11 +48,59 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/id_timb_mod"
+                android:id="@+id/id_estable_crear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ingresar Timbrado"
+                android:hint="Asignar establecimiento"
+                android:inputType="number"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/id_pe_crear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Establecer P. de emisión"
+                android:inputType="number"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/id_dir_crear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Dirección"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parametros de facturación"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/id_inicio_crear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Desde"
+                android:inputType="number"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/id_fin_crear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Hasta"
                 android:inputType="number"
                 android:textSize="20sp" />
 
@@ -61,46 +108,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="15dp" />
 
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vigencia:"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
-            <EditText
-                android:id="@+id/id_desde_mod"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Inicio"
-                android:inputType="date"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/id_hasta_mod"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Fin"
-                android:inputType="date"
-                android:textSize="20sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
             <Switch
-                android:id="@+id/id_switch_mod"
+                android:id="@+id/id_switchPE_crear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center|left"
-                android:onClick="onClick"
+                android:checked="true"
+                android:enabled="false"
                 android:text="Estado:  "
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -110,41 +123,36 @@
                 android:layout_height="15dp" />
 
             <TextView
-                android:id="@+id/id_estado_modif"
+                android:id="@+id/id_est_pe_crear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:text="TextView"
                 android:textColor="#4CAF50"
-                android:textSize="24sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="15dp" />
 
             <View
-                android:id="@+id/divider22"
+                android:id="@+id/divider7"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
-                android:padding="10dp"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp" />
+                android:background="?android:attr/listDivider" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />
 
             <Button
-                android:id="@+id/id_btnMT"
+                android:id="@+id/id_btnGPE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background"
-                android:onClick="Modificar"
-                android:text="@string/btnmodificar" />
+                android:onClick="btn_registrar"
+                android:text="@string/btnregistrar" />
 
         </LinearLayout>
     </ScrollView>
