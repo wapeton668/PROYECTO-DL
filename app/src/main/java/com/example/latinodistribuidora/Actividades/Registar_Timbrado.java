@@ -52,7 +52,7 @@ public class Registar_Timbrado extends AppCompatActivity {
             try {
                 Access_Timbrado db = Access_Timbrado.getInstance(getApplicationContext());
                 db.openWritable();
-                long insertado= db.insertarTimbrado(timbrado.getText().toString(),desde.getText().toString(),desde.getText().toString());
+                long insertado= db.insertarTimbrado(timbrado.getText().toString(),desde.getText().toString(),hasta.getText().toString());
                 db.close();
                 if(insertado>0){
                     Toast.makeText(getApplicationContext(),"Timbrado registrado exitosamente",Toast.LENGTH_SHORT).show();

@@ -49,6 +49,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/id_descmod_iva"
                 android:layout_width="match_parent"
@@ -58,6 +67,15 @@
                 android:inputType="textPersonName"
                 android:textSize="20sp" />
 
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tasa sin simbolo(%)"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/id_impu_iva"
                 android:layout_width="match_parent"
@@ -66,6 +84,10 @@
                 android:hint="Ingrese la tasa a aplicar"
                 android:inputType="number"
                 android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <View
                 android:id="@+id/divider18"
@@ -79,6 +101,10 @@
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
             <Button
                 android:id="@+id/id_btnMIVA"

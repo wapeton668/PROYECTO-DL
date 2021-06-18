@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actividades.Registrar_Departamento">
+    tools:context=".Actividades.Listar_Clientes">
 
     <LinearLayout
-        android:id="@+id/linearLayout13"
+        android:id="@+id/linearLayout47"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#3F51B5"
@@ -17,15 +17,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textView40"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="CREAR DEPARTAMENTO"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:text="CLIENTES"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textSize="22sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -39,51 +39,43 @@
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout48"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
-
-        <TextView
-            android:id="@+id/textView72"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Departamento:"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout47">
 
         <EditText
-            android:id="@+id/id_newdepart"
+            android:id="@+id/id_buscarcliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/search"
             android:ems="10"
-            android:hint="Ingresar departamento"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
+            android:hint="Buscador"
+            android:inputType="textPersonName" />
 
-        <Space
+        <ListView
+            android:id="@+id/id_lista_cliente"
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <View
-            android:id="@+id/divider27"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
-
-        <Button
-            android:id="@+id/id_btnGDep"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:onClick="btn_registrar"
-            android:text="@string/btnregistrar" />
-
+            android:layout_height="match_parent" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout48"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/id_cli_nue_pie"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

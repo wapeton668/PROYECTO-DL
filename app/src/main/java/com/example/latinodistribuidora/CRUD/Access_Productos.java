@@ -8,10 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.latinodistribuidora.Conexion.DatabaseOpenHelper;
 
-public class Access_Clientes {
+public class Access_Productos {
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
-    private static Access_Clientes instance;
+    private static Access_Productos instance;
     Cursor registros = null;
     Cursor Filtrar=null;
 
@@ -20,7 +20,7 @@ public class Access_Clientes {
      *
      * @param context
      */
-    public Access_Clientes(Context context) {
+    public Access_Productos(Context context) {
         this.openHelper = new DatabaseOpenHelper(context);
     }
 
@@ -30,9 +30,9 @@ public class Access_Clientes {
      * @param context the Context
      * @return the instance of DabaseAccess
      */
-    public static Access_Clientes getInstance(Context context) {
+    public static Access_Productos getInstance(Context context) {
         if (instance == null) {
-            instance = new Access_Clientes(context);
+            instance = new Access_Productos(context);
         }
         return instance;
     }
@@ -57,52 +57,51 @@ public class Access_Clientes {
         }
     }
 
-    //CRUD TABLA CLIENTES*********************************************************************************************
-
-
-    public Cursor getClientes(){
-        //ArrayList<Usuarios> lista = new ArrayList<>();
+    public Cursor getProductos(){
         this.openWritable();
-        registros = db.rawQuery("Select * from v_clientes where estado='S'", null);
+        registros = db.rawQuery("Select * from v_productos where estado='S' order by clasif asc", null);
         return registros;
     }
 
-    public Cursor getFiltrarClientes(String texto){
+    public Cursor getFiltrarProductos(String texto){
         this.openReadable();
-        Filtrar = db.rawQuery("select * from v_clientes where razon_social like '%"+texto+"%' and estado='S'", null);
+        Filtrar = db.rawQuery("select * from v_productos where descripcion like '%"+texto+"%' and estado='S' order by clasif asc", null);
         return  Filtrar;
     }
 
-    public long insertarClientes(String razon_social, String ruc, String direccion, String celular, int idciudad){
+    public long insertarProductos(String cod_interno, String cod_barra, String descripcion, String precio, int idunidad, int iddivision, int idiva){
         ContentValues values = new ContentValues();
-        values.put("razon_social", razon_social);
-        values.put("ruc", ruc);
-        values.put("direccion", direccion);
-        values.put("telefono", celular);
+        values.put("cod_interno", cod_interno);
+        values.put("cod_barra", cod_barra);
+        values.put("descripcion", descripcion);
+        values.put("precio_venta", precio);
+        values.put("stock", 0);
         values.put("estado", "S");
-        values.put("ciudad_idciudad", idciudad);
+        values.put("um_idunidad", idunidad);
+        values.put("division_iddivision", iddivision);
+        values.put("iva_idiva", idiva);
 
-        long insertado = db.insert("clientes",null,values);
+        long insertado = db.insert("productos",null,values);
 
         return insertado;
     }
 
-    public Cursor getCliente_a_modificar(int clienteEditar) {
+    public Cursor getProducto_a_modificar(int productoEditar) {
         this.openReadable();
-        registros = db.rawQuery("Select * from v_clientes where idcliente="+clienteEditar, null);
+        registros = db.rawQuery("Select * from v_productos where idproducto="+productoEditar, null);
         return  registros;
     }
 
-    public long ActualizarCliente(ContentValues values, int clienteEditar) {
+    public long ActualizarProduto(ContentValues values, int productoEditar) {
         this.openWritable();
-        long accion = db.update("clientes",values, "idcliente="+clienteEditar,null);
+        long accion = db.update("productos",values, "idproducto="+productoEditar,null);
         return accion;
     }
-    public long EliminarCliente(int ID) {
+    public long EliminarProducto(int ID) {
         ContentValues values = new ContentValues();
         values.put("estado", "N");
         this.openWritable();
-        long accion = db.update("clientes",values, "idcliente="+ID,null);
+        long accion = db.update("productos",values, "idproducto ="+ID,null);
         return accion;
     }
 

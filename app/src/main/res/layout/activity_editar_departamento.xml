@@ -44,6 +44,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
 
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Departamento:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/id_depmodifc"
             android:layout_width="match_parent"
@@ -56,6 +65,16 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="15dp" />
+
+        <View
+            android:id="@+id/divider24"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <Button
             android:id="@+id/id_btnmoddepart"

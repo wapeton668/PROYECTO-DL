@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actividades.Registrar_PE">
+    tools:context=".Actividades.Registrar_Productos">
 
     <LinearLayout
-        android:id="@+id/linearLayout46"
+        android:id="@+id/linearLayout52"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#3F51B5"
@@ -17,12 +17,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView32"
+            android:id="@+id/textView94"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="CREAR PUNTO DE EMISIÓN"
-            android:textColor="@color/white"
+            android:text="CREAR PRODUCTO"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -40,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout46">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout52">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,141 +49,156 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView81"
+                android:id="@+id/textView95"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Establecimiento:"
+                android:text="Cod Interno:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_estable_crear"
+                android:id="@+id/id_codi_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ej:001"
-                android:inputType="number"
-                android:textSize="20sp" />
+                android:inputType="number" />
 
             <TextView
-                android:id="@+id/textView82"
+                android:id="@+id/textView96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Punto de emisión:"
+                android:text="Cod barra:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_pe_crear"
+                android:id="@+id/id_codb_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ej:002"
-                android:inputType="number"
-                android:textSize="20sp" />
+                android:inputType="number" />
 
             <TextView
-                android:id="@+id/textView83"
+                android:id="@+id/textView99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dirección:"
+                android:text="Clasificación:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/id_spiclasif_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView97"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_dir_crear"
+                android:id="@+id/id_descrip_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Dirección"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unidad de Medida:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/id_spium_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView98"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Precio venta:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/id_pv_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IVA a grabar"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/id_spiiva_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Parametros de facturación"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/id_inicio_crear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Desde"
-                android:inputType="number"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/id_fin_crear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Hasta"
-                android:inputType="number"
-                android:textSize="20sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
-            <Switch
-                android:id="@+id/id_switchPE_crear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:enabled="false"
-                android:text="Estado:  "
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
-            <TextView
-                android:id="@+id/id_est_pe_crear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="TextView"
-                android:textColor="#4CAF50"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="15dp" />
-
             <View
-                android:id="@+id/divider7"
+                android:id="@+id/divider29"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
+                android:background="?android:attr/listDivider"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />
 
             <Button
-                android:id="@+id/id_btnGPE"
+                android:id="@+id/id_btnGP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
-                android:onClick="btn_registrar"
+                android:background="@android:drawable/editbox_background_normal"
                 android:text="@string/btnregistrar" />
 
+            <TextView
+                android:id="@+id/id_clasif_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/idum_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/idiva_n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

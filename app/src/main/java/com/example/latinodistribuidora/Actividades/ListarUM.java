@@ -90,7 +90,7 @@ public class ListarUM extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if (item.getItemId() == R.id.item_inactivar) {
+            if (item.getItemId() == R.id.item_eliminar) {
                 AlertaEliminacion();
                 mode.finish();
             } else if (item.getItemId() == R.id.item_modificar) {

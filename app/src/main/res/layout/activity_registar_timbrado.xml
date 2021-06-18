@@ -47,6 +47,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Timbrado:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/id_timb_crear"
                 android:layout_width="match_parent"
@@ -66,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:text="Vigencia:"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"

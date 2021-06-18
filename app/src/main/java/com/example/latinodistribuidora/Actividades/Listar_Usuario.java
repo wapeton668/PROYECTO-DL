@@ -73,7 +73,7 @@ public class Listar_Usuario extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if(item.getItemId() == R.id.item_inactivar){
+            if(item.getItemId() == R.id.item_eliminar){
                 Alerta_eliminacion();
                 mode.finish();
 

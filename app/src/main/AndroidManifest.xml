@@ -10,7 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".Actividades.Editar_PE"></activity>
+        <activity android:name=".Actividades.Editar_Producto"></activity>
+        <activity android:name=".Actividades.Registrar_Productos" />
+        <activity android:name=".Actividades.Listar_Productos" />
+        <activity android:name=".Actividades.Editar_Clientes" />
+        <activity android:name=".Actividades.Registrar_Clientes" />
+        <activity android:name=".Actividades.Listar_Clientes" />
+        <activity android:name=".Actividades.Editar_PE" />
         <activity android:name=".Actividades.Registrar_PE" />
         <activity android:name=".Actividades.Listar_PE" />
         <activity android:name=".Actividades.Editar_Timbrado" />

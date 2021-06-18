@@ -4,216 +4,226 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actividades.Editar_Usuario">
+    tools:context=".Actividades.Editar_Producto">
 
     <LinearLayout
-        android:id="@+id/linearLayout10"
+        android:id="@+id/linearLayout52"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#3F51B5"
-        android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView94"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="MODIFICAR VENDEDOR"
+            android:text="CREAR PRODUCTO"
             android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textSize="22sp"
+            android:textColorHighlight="@color/white"
+            android:textSize="20sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout52">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp">
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView63"
+                android:id="@+id/textView95"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre y Apellido:"
+                android:text="Cod Interno:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_nombre_modificar"
+                android:id="@+id/id_codi_m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Nombre y Apellido"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
+                android:inputType="number" />
 
             <TextView
-                android:id="@+id/textView64"
+                android:id="@+id/textView96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cédula de identidad:"
+                android:text="Cod barra:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_cedula_modificar"
+                android:id="@+id/id_codb_m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Cedula de identidad"
-                android:inputType="number"
-                android:textSize="20sp" />
+                android:inputType="number" />
 
             <TextView
-                android:id="@+id/textView65"
+                android:id="@+id/textView99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dirección:"
+                android:text="Clasificación:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/id_direccion_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Dirección"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textView66"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Celular:"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/id_celular_modificar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Celular n°"
-                android:inputType="number"
-                android:textSize="20sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="11dp"
-                android:background="?android:attr/listDivider" />
-
-            <Space
+            <Spinner
+                android:id="@+id/id_spiclasif_m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView68"
+                android:id="@+id/textView97"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Usuario:"
+                android:text="Descripción:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_usuario_modificar"
+                android:id="@+id/id_descrip_m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Usuario"
-                android:inputType="textPersonName"
-                android:textSize="20sp" />
+                android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/textView69"
+                android:id="@+id/textView100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contraseña:"
+                android:text="Unidad de Medida:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/id_contrasena_modificar"
+            <Spinner
+                android:id="@+id/id_spium_m"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView70"
+                android:id="@+id/textView98"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Confirmar contraseña:"
+                android:text="Precio venta:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/id_confirmarcontrasena_modificar"
+                android:id="@+id/id_pv_m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Confirmar contraseña"
-                android:inputType="textPassword"
-                android:textSize="20sp" />
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IVA a grabar"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/id_spiiva_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp" />
+                android:layout_height="10dp" />
 
             <View
-                android:id="@+id/divider26"
+                android:id="@+id/divider29"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
+                android:background="?android:attr/listDivider"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />
 
             <Button
-                android:id="@+id/id_guardar_modificacion"
+                android:id="@+id/id_btnMP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
-                android:onClick="Modificar"
+                android:background="@android:drawable/editbox_background_normal"
                 android:text="@string/btnmodificar" />
+
+            <TextView
+                android:id="@+id/id_clasif_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/id_descclasif_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/idum_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/iddescum_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/idiva_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/iddesciva_m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

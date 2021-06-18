@@ -48,21 +48,45 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unidad de medida:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/id_mod_um"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ingrese unidad de medida"
-                android:inputType="textPersonName" />
+                android:hint="Ej: UN"
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cantidad a aplicar:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/id_mod_cant_um"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ingrese cantidad a aplicar"
-                android:inputType="number" />
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <View
                 android:id="@+id/divider20"
@@ -76,6 +100,10 @@
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
             <Button
                 android:id="@+id/btn_MUM"
