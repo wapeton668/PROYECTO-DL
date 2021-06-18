@@ -70,7 +70,7 @@
                 android:id="@+id/textView34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EAE6E6"
+                android:background="#EDEAEA"
                 android:gravity="center"
                 android:text="Comprobantes" />
 
@@ -112,7 +112,7 @@
                 android:id="@+id/textView35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EAE6E6"
+                android:background="#EDEAEA"
                 android:gravity="center" />
 
             <Space
@@ -138,7 +138,7 @@
                 android:id="@+id/textView36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EAE6E6"
+                android:background="#EDEAEA"
                 android:gravity="center"
                 android:text="Ubicación" />
 
@@ -180,7 +180,7 @@
                 android:id="@+id/textView37"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EAE6E6"
+                android:background="#EDEAEA"
                 android:gravity="center"
                 android:text="Productos" />
 

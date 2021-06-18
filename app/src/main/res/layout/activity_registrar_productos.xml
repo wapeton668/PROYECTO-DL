@@ -52,6 +52,8 @@
                 android:id="@+id/textView95"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="Cod Interno:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -61,13 +63,17 @@
                 android:id="@+id/id_codi_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="Cod barra:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -77,13 +83,17 @@
                 android:id="@+id/id_codb_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="Clasificación:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -92,12 +102,15 @@
             <Spinner
                 android:id="@+id/id_spiclasif_n"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp" />
 
             <TextView
                 android:id="@+id/textView97"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="Descripción:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -107,13 +120,17 @@
                 android:id="@+id/id_descrip_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="Unidad de Medida:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -122,12 +139,15 @@
             <Spinner
                 android:id="@+id/id_spium_n"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp" />
 
             <TextView
                 android:id="@+id/textView98"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="Precio venta:"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -137,13 +157,17 @@
                 android:id="@+id/id_pv_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView101"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#EDEAEA"
                 android:text="IVA a grabar"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -152,7 +176,8 @@
             <Spinner
                 android:id="@+id/id_spiiva_n"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -180,25 +205,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/editbox_background_normal"
+                android:onClick="Guardar"
                 android:text="@string/btnregistrar" />
 
             <TextView
                 android:id="@+id/id_clasif_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/idum_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/idiva_n"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:gravity="center"
+                android:visibility="invisible" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     tools:context=".Actividades.+">
     <item
         android:id="@+id/item_nuevo"
-        android:icon="@android:drawable/ic_menu_add"
+        android:icon="@drawable/adds"
         android:title="Nuevo"
         app:showAsAction="always" />
 </menu>

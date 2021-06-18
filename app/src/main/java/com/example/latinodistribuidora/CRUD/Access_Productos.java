@@ -59,13 +59,14 @@ public class Access_Productos {
 
     public Cursor getProductos(){
         this.openWritable();
-        registros = db.rawQuery("Select * from v_productos where estado='S' order by clasif asc", null);
+        registros = db.rawQuery("Select * from v_productos order by clasif asc", null);
         return registros;
     }
 
     public Cursor getFiltrarProductos(String texto){
         this.openReadable();
-        Filtrar = db.rawQuery("select * from v_productos where descripcion like '%"+texto+"%' and estado='S' order by clasif asc", null);
+        Filtrar = db.rawQuery("select * from v_productos where cod_interno like '%"+texto+"%' or " +
+                "cod_barra like '%"+texto+"%' or descripcion like '%"+texto+"%'order by clasif asc", null);
         return  Filtrar;
     }
 

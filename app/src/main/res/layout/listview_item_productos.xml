@@ -17,7 +17,7 @@
             android:id="@+id/id_descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F3EBEB"
+            android:background="#EDEAEA"
             android:padding="5dp"
             android:text="TextView"
             android:textColor="@color/black"

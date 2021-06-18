@@ -48,6 +48,7 @@
             android:id="@+id/textView73"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#EDEAEA"
             android:text="Clasificación de productos:"
             android:textColor="@color/black"
             android:textSize="16sp"
