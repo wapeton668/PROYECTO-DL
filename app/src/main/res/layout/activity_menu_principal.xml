@@ -82,6 +82,7 @@
                 android:background="@android:drawable/editbox_background"
                 android:drawableTop="@drawable/venta"
                 android:drawablePadding="5dp"
+                android:onClick="irVenta"
                 android:padding="5dp"
                 android:paddingStart="5dp"
                 android:paddingLeft="5dp"

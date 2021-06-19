@@ -39,6 +39,11 @@ public class MenuPrincipal extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void irVenta(View view){
+        Intent i = new Intent( this, Registrar_venta.class);
+        startActivity(i);
+    }
+
     public void CerrarSesion(View view){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setMessage("¿Esta seguro que desea cerrar sesión?");
