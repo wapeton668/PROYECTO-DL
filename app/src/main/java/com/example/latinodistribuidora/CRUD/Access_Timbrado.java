@@ -65,6 +65,11 @@ public class Access_Timbrado {
         Cursor registros = db.rawQuery("Select * from timbrado order by idtimbrado asc", null);
         return registros;
     }
+    public Cursor getTimbradoActivo(){
+        this.openWritable();
+        Cursor registros = db.rawQuery("Select * from timbrado where estado='S'", null);
+        return registros;
+    }
 
     public long insertarTimbrado(String timbrado, String desde, String hasta){
         ContentValues values = new ContentValues();

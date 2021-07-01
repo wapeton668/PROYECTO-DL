@@ -1,9 +1,5 @@
 package com.example.latinodistribuidora.Actividades;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -20,17 +16,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.latinodistribuidora.Adaptador_Productos;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.latinodistribuidora.Adaptador_Clientes;
+import com.example.latinodistribuidora.Adaptador_Productos_venta;
 import com.example.latinodistribuidora.CRUD.Access_Productos;
 import com.example.latinodistribuidora.Modelos.Productos;
 import com.example.latinodistribuidora.R;
 
 import java.util.ArrayList;
 
-public class Listar_Productos extends AppCompatActivity {
+public class Listar_ProductosVenta extends AppCompatActivity {
     private ListView lv;
     private ArrayList<Productos> lista = new ArrayList<>();
-    private Adaptador_Productos adaptadorProductos;
+    private Adaptador_Productos_venta adaptadorProductos;
     private int productoseleccionado = -1;
     private Object mActionMode;
     private TextView pie;
@@ -39,10 +38,9 @@ public class Listar_Productos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_productos);
+        setContentView(R.layout.activity_listar_productos_venta);
 
-        pie = findViewById(R.id.id_productos_pie);
-        buscar = findViewById(R.id.id_buscarproductos);
+        buscar = findViewById(R.id.id_buscarproductosVenta);
 
         llenarLista();
         onClick();
@@ -82,34 +80,18 @@ public class Listar_Productos extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 productoseleccionado = position;
-                mActionMode = Listar_Productos.this.startActionMode(amc);
+                mActionMode = Listar_ProductosVenta.this.startActionMode(amc);
                 view.setSelected(true);
                 return true;
             }
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.opcion_add, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem){
-        int id=menuItem.getItemId();
-        if(id==R.id.item_nuevo){
-            ir_a_RegistrarProducto(null);
-            return true;
-        }
-        return super.onOptionsItemSelected(menuItem);
-    }
-
     private ActionMode.Callback amc = new ActionMode.Callback() {
 
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            getMenuInflater().inflate(R.menu.opciones_del_upd, menu);
+            getMenuInflater().inflate(R.menu.opciones_vender, menu);
             return true;
         }
 
@@ -120,14 +102,15 @@ public class Listar_Productos extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if (item.getItemId() == R.id.item_eliminar) {
-                AlertaEliminacion();
-                mode.finish();
-            } else if (item.getItemId() == R.id.item_modificar) {
+            if (item.getItemId() == R.id.item_vender) {
                 Productos productos = lista.get(productoseleccionado);
-                Intent in = new Intent(getApplicationContext(), Editar_Producto.class);
-                in.putExtra("idproducto", productos.getIdproducto());
-                startActivity(in);
+                Intent bundle = new Intent(getApplicationContext(), Registrar_venta.class);
+                bundle.putExtra("idproducto", productos.getIdproducto());
+                bundle.putExtra("descripcion", productos.getDescripcion());
+                bundle.putExtra("precio", productos.getPrecio());
+                bundle.putExtra("um", productos.getIdunidad());
+                bundle.putExtra("umdescripcion", productos.getUnidad());
+                startActivity(bundle);
                 mode.finish();
                 finish();
             }
@@ -141,52 +124,9 @@ public class Listar_Productos extends AppCompatActivity {
 
 
     };
-
-    private void AlertaEliminacion(){
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setMessage("¿Desea eliminar el producto seleccionado?");
-        alertDialog.setTitle("Eliminar");
-        alertDialog.setIcon(android.R.drawable.ic_delete);
-        alertDialog.setCancelable(false);
-        alertDialog.setPositiveButton("Sí", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
-                eliminarProducto();
-            }
-        });
-        alertDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener()
-        {
-            public void onClick(DialogInterface dialog, int which)
-            {
-                dialog.cancel();
-            }
-        });
-        alertDialog.show();
-    }
-
-    public void eliminarProducto(){
-        try{
-            Access_Productos db = Access_Productos.getInstance(getApplicationContext());
-            Productos productos = lista.get(productoseleccionado);
-            db.openWritable();
-            long resultado = db.EliminarProducto(productos.getIdproducto());
-            if(resultado > 0){
-                Toast.makeText(getApplicationContext(),"Producto eliminado satisfactoriamente", Toast.LENGTH_LONG).show();
-                lista.removeAll(lista);
-                llenarLista();
-            }else{
-                Toast.makeText(getApplicationContext(),"Se produjo un error al eliminar producto", Toast.LENGTH_LONG).show();
-            }
-            db.close();
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Error Fatal: "+e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-    }
-
     public void llenarLista(){
         try{
-            lv = (ListView) findViewById(R.id.id_lista_productos);
+            lv = (ListView) findViewById(R.id.id_lista_productosVenta);
             Access_Productos db = Access_Productos.getInstance(getApplicationContext());
             Cursor c = db.getProductos();
             if (c.moveToFirst()){
@@ -196,16 +136,8 @@ public class Listar_Productos extends AppCompatActivity {
                             c.getString(9),c.getString(6),c.getInt(7)));
                 }while (c.moveToNext());
             }
-            adaptadorProductos = new Adaptador_Productos(this,lista);
+            adaptadorProductos = new Adaptador_Productos_venta(this,lista);
             lv.setAdapter(adaptadorProductos);
-            int cant = lv.getCount();
-            if(cant==0){
-                pie.setText("Lista vacía");
-            }else if(cant==1){
-                pie.setText(cant+" producto listado");
-            }else{
-                pie.setText(cant+" productos listados");
-            }
             db.close();
 
         }catch (Exception e){
@@ -215,7 +147,7 @@ public class Listar_Productos extends AppCompatActivity {
 
     public void llenarListaFiltrada(String filtro){
         try{
-            lv = (ListView) findViewById(R.id.id_lista_productos);
+            lv = (ListView) findViewById(R.id.id_lista_productosVenta);
             Access_Productos db = Access_Productos.getInstance(getApplicationContext());
             Cursor c = db.getFiltrarProductos(filtro);
             if (c.moveToFirst()){
@@ -225,27 +157,12 @@ public class Listar_Productos extends AppCompatActivity {
                             c.getString(9),c.getString(6),c.getInt(7)));
                 }while (c.moveToNext());
             }
-            adaptadorProductos = new Adaptador_Productos(this,lista);
+            adaptadorProductos = new Adaptador_Productos_venta(this,lista);
             lv.setAdapter(adaptadorProductos);
-            int cant = lv.getCount();
-            if(cant==0){
-                pie.setText("Lista vacía");
-            }else if(cant==1){
-                pie.setText(cant+" producto listado");
-            }else{
-                pie.setText(cant+" productos listados");
-            }
             db.close();
 
         }catch (Exception e){
             Toast.makeText(this, "Error cargando lista: "+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-    }
-
-
-    public void ir_a_RegistrarProducto(View view){
-        Intent i = new Intent(getApplicationContext(), Registrar_Productos.class);
-        startActivity(i);
-        finish();
     }
 }

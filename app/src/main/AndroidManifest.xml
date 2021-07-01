@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".Actividades.Registrar_venta"></activity>
+        <activity android:name=".Actividades.Listar_ProductosVenta"/>
+        <activity android:name=".Actividades.Listar_ClientesVenta"/>
+        <activity android:name=".Actividades.Registrar_venta" />
         <activity android:name=".Actividades.Editar_Producto" />
         <activity android:name=".Actividades.Registrar_Productos" />
         <activity android:name=".Actividades.Listar_Productos" />

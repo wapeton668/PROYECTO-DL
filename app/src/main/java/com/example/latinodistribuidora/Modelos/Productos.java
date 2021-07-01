@@ -14,6 +14,7 @@ public class Productos implements Serializable {
     public String division;
     public int idiva;
     public String iva;
+    public int impuesto;
 
     public Productos(int idproducto, String cod_interno, String cod_barra, String descripcion, String precio, int idunidad, String unidad, int iddivision, String division, int idiva, String iva) {
         this.idproducto = idproducto;
@@ -28,7 +29,7 @@ public class Productos implements Serializable {
         this.idiva = idiva;
         this.iva = iva;
     }
-    public Productos(int idproducto, String cod_interno, String cod_barra, String descripcion, String precio, String unidad, String division,String iva) {
+    public Productos(int idproducto, String cod_interno, String cod_barra, String descripcion, String precio, String unidad, String division,String iva, int impuesto) {
         this.idproducto = idproducto;
         this.cod_interno = cod_interno;
         this.cod_barra = cod_barra;
@@ -37,6 +38,7 @@ public class Productos implements Serializable {
         this.unidad = unidad;
         this.division = division;
         this.iva = iva;
+        this.impuesto = impuesto;
     }
 
     public Productos(){}
@@ -125,5 +127,13 @@ public class Productos implements Serializable {
 
     public void setIva(String iva) {
         this.iva = iva;
+    }
+
+    public int getImpuesto() {
+        return impuesto;
+    }
+
+    public void setImpuesto(int impuesto) {
+        this.impuesto = impuesto;
     }
 }

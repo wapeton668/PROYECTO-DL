@@ -39,7 +39,7 @@ public class Adaptador_Productos extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         Productos item = (Productos) getItem(position);
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.listview_item_productos,null);
+        convertView = LayoutInflater.from(context).inflate(R.layout.listview_item_productos2,null);
         TextView codI = (TextView) convertView.findViewById(R.id.id_interno);
         TextView codB = (TextView) convertView.findViewById(R.id.id_barra);
         TextView descipcion = (TextView) convertView.findViewById(R.id.id_descripcion);

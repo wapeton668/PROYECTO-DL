@@ -45,9 +45,10 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <LinearLayout
+            android:id="@+id/gra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top"
+            android:gravity="center|top"
             android:orientation="vertical"
             android:padding="10dp"
             android:paddingStart="10dp"
@@ -142,12 +143,16 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="match_parent"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
+                android:drawableBottom="@drawable/dedo"
                 android:onClick="IniciarSesion"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
                 android:text="@string/btnIrMenu"
-                android:textSize="12sp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 

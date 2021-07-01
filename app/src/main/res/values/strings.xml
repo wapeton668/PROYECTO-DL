@@ -5,6 +5,8 @@
     <string name="btnmodificar">MODIFICAR REGISTRO</string>
     <string name="btnIrMenu">INICIAR SESIÓN</string>
     <string name="btnIrInicio">CERRAR SESIÓN</string>
+    <string name="btnAgregar">AGREGAR</string>
+    <string name="btnFin">FINALIZAR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.latinodistribuidora.Actividades.MenuPrincipal;
 import com.example.latinodistribuidora.Actividades.Registrar_Usuario;
+import com.example.latinodistribuidora.Actividades.Registrar_venta;
 import com.example.latinodistribuidora.CRUD.Access_Usuarios;
 import com.example.latinodistribuidora.R;
 
@@ -62,6 +63,8 @@ public class MainActivity<Public> extends AppCompatActivity {
                 if(cursor.moveToNext()){
                     db.close();
                     Intent i = new Intent(this, MenuPrincipal.class);
+                    i.putExtra("idVendedor", cursor.getInt(0));
+                    i.putExtra("Vendedor", cursor.getString(1));
                     startActivity(i);
                     this.finish();
                 }else{

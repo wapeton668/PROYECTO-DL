@@ -7,17 +7,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.latinodistribuidora.Modelos.Clientes;
-import com.example.latinodistribuidora.Modelos.DetalleVenta;
 import com.example.latinodistribuidora.Modelos.Productos;
 
 import java.util.ArrayList;
 
-public class Adaptador_Clientes extends BaseAdapter {
+public class Adaptador_Productos_venta extends BaseAdapter {
     private final Context context;
-    private final ArrayList<Clientes> listItems;
+    private final ArrayList<Productos> listItems;
 
-    public Adaptador_Clientes(Context context, ArrayList<Clientes> listItems) {
+    public Adaptador_Productos_venta(Context context, ArrayList<Productos> listItems) {
         this.context = context;
         this.listItems = listItems;
     }
@@ -39,17 +37,13 @@ public class Adaptador_Clientes extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Clientes item = (Clientes) getItem(position);
+        Productos item = (Productos) getItem(position);
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.listview_item_clientes, null);
-        TextView razonsocial = convertView.findViewById(R.id.id_razonsocial);
-        TextView ruc = convertView.findViewById(R.id.id_ruc);
-        TextView ciudad = convertView.findViewById(R.id.id_ciudad);
-
-
-        razonsocial.setText(item.getRazon_social());
-        ruc.setText(item.getRuc());
-        ciudad.setText(item.getCiudad());
+        convertView = LayoutInflater.from(context).inflate(R.layout.listview_item_productos_venta, null);
+        TextView descipcion = convertView.findViewById(R.id.id_descripcion);
+        TextView precio = convertView.findViewById(R.id.id_precio);
+        descipcion.setText(item.getDescripcion());
+        precio.setText(item.getPrecio() + "  /  " + item.getIva());
         return convertView;
     }
 }

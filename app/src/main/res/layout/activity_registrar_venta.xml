@@ -7,40 +7,101 @@
     tools:context=".Actividades.Registrar_venta">
 
     <LinearLayout
-        android:id="@+id/linearLayout56"
-        android:layout_width="389dp"
-        android:layout_height="27dp"
-        android:background="#EFEBEB"
-        android:orientation="horizontal"
-        android:padding="5dp"
+        android:id="@+id/linearLayout54"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#C1C9EEFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="254dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView141"
-                android:layout_width="wrap_content"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="2dp"
                 android:text="Factura N°:"
-                android:textColor="@color/black"
+                android:textColor="#131313"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView142"
-                android:layout_width="165dp"
+                android:id="@+id/id_estab"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="001-001-0000154"
+                android:fontFamily="monospace"
+                android:text="001"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/black"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:id="@+id/id_pexp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="001"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/black"
+                tools:ignore="DuplicateIds" />
+
+            <TextView
+                android:id="@+id/id_nFact"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="0000000"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="DuplicateIds" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="2dp"
+                android:text="Fecha:"
+                android:textColor="#131313"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_Fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:fontFamily="monospace"
+                android:text="31/31/2021"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -48,195 +109,256 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:gravity="right"
-            android:orientation="horizontal"
-            android:paddingRight="5dp">
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView143"
-                android:layout_width="wrap_content"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Fecha: "
-                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="2dp"
+                android:text="Vendedor:"
+                android:textColor="#131313"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView144"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/id_NombVendedor"
+                android:layout_width="254dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0"
-                android:text="01/01/2021"
+                android:fontFamily="monospace"
+                android:text="Nombre Vendedor"
                 android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/id_Vendedor"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="2dp"
+                android:text="Condición:"
+                android:textColor="#131313"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_condicion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:fontFamily="monospace"
+                android:text="Contado"
+                android:textColor="#1E5E20"
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="2dp"
+                android:text="Cliente:"
+                android:textColor="#131313"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_DescCliente"
+                android:layout_width="254dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:fontFamily="monospace"
+                android:text="Despensa Divino Niño Jesus"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/id_Cliente"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingLeft="2dp"
+                android:text="RUC:"
+                android:textColor="#131313"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_ruc_venta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:fontFamily="monospace"
+                android:text="80008448-9"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout56"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout54">
+
+        <View
+            android:id="@+id/divider9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout55"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#C1C9EEFF"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout54">
+
+        <Button
+            android:id="@+id/id_btnAgregar"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btnAgregar" />
+
+        <Button
+            android:id="@+id/id_btnFin"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btnFin" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout57"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#EFEBEB"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout56">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout55">
+
+        <TextView
+            android:id="@+id/id_vdescripproducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/id_vprecioproducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:layout_width="262dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView137"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Vendedor: "
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView138"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="left"
-                android:text="Emanuel Sosa"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:gravity="right"
-            android:orientation="horizontal"
-            android:paddingRight="10dp">
-
-            <TextView
-                android:id="@+id/textView139"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Cond:"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView140"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Contado"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout58"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#EFEBEB"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout57">
-
-        <TextView
-            android:id="@+id/textView133"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="Cliente: "
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView134"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:text="Despensa Divino Niño Jesus"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout59"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#EFEBEB"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout58">
-
-        <TextView
-            android:id="@+id/textView135"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RUC: "
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView136"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="80008448-9"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </LinearLayout>
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/linearLayout53"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout59">
+            <TextView
+                android:id="@+id/textView108"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="CANT: " />
 
-        <Button
-            android:id="@+id/btnCVenta"
-            android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/id_vcantproducto"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/textView111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="U.M." />
+
+            <Spinner
+                android:id="@+id/lista_vum"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="Vender" />
+            android:gravity="center|center_horizontal|center_vertical"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnDVenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="Detalle" />
+            <TextView
+                android:id="@+id/id_vidprod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/btnFVenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="FINALIZAR" />
+            <TextView
+                android:id="@+id/id_vidum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/id_vum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="OK" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -244,18 +366,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout53">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout57">
 
-        <FrameLayout
-            android:id="@+id/contenedorFragmen"
+        <View
+            android:id="@+id/divider32"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
 
-        </FrameLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 

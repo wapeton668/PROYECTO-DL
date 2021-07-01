@@ -7,23 +7,34 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.latinodistribuidora.MainActivity;
 import com.example.latinodistribuidora.R;
 
 public class MenuPrincipal extends AppCompatActivity {
+    private int idvendedor;
+    private String vendedor;
+    private TextView txtbienvenida,txtidvendedor, txtvendedor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+        txtidvendedor = findViewById(R.id.id_idvendedor);
+        txtvendedor = findViewById(R.id.id_vendedor);
+        txtbienvenida = findViewById(R.id.id_bienvenido);
+        Bundle bundle = this.getIntent().getExtras();
+        if (bundle != null) {
+            idvendedor = bundle.getInt("idVendedor");
+            vendedor= bundle.getString("Vendedor");
+        }
+        txtidvendedor.setText(String.valueOf(idvendedor));
+        txtvendedor.setText(vendedor);
+        txtbienvenida.setText("Bienvenido "+vendedor+", comencemos a trabajar!");
     }
-/*
-    public void irClientes(View view){
-        Intent i = new Intent(this, Listar_Cliente.class);
-        startActivity(i);
-    }*/
+
     public void irOpcionesMantenimieto(View view){
         Intent i = new Intent( this, Opciones_Mantenimiento.class);
         startActivity(i);
@@ -40,7 +51,9 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
     public void irVenta(View view){
-        Intent i = new Intent( this, Registrar_venta.class);
+        Intent i = new Intent( this, Listar_ClientesVenta.class);
+        i.putExtra("idVendedor",txtidvendedor.getText());
+        i.putExtra("Vendedor",txtvendedor.getText());
         startActivity(i);
     }
 
@@ -50,12 +63,15 @@ public class MenuPrincipal extends AppCompatActivity {
         alertDialog.setTitle("Cerrar Sesión");
         alertDialog.setIcon(android.R.drawable.ic_menu_info_details);
         alertDialog.setCancelable(false);
-        alertDialog.setPositiveButton("Sí", new DialogInterface.OnClickListener()
+        alertDialog.setPositiveButton("Cerrar Sesión", new DialogInterface.OnClickListener()
         {
             public void onClick(DialogInterface dialog, int which)
             {
                 Intent i = new Intent( getApplicationContext(), MainActivity.class);
                 startActivity(i);
+                txtidvendedor.setText("");
+                txtvendedor.setText("");
+                txtbienvenida.setText("");
                 finish();
             }
         });

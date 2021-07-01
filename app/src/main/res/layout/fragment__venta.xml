@@ -1,23 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Actividades.Fragment_Venta">
 
-    <TextView
-        android:id="@+id/textView146"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="VENDER"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:id="@+id/linearLayout61"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout64"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnVenta"
-        android:layout_width="match_parent"
+        <View
+            android:id="@+id/divider31"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <EditText
+            android:id="@+id/id_buscarproductosV"
+            android:layout_width="198dp"
+            android:layout_height="37dp"
+            android:drawableLeft="@drawable/search"
+            android:ems="10"
+            android:hint="Buscador"
+            android:inputType="textPersonName"
+            android:textSize="14sp" />
+
+        <ListView
+            android:id="@+id/list_prodavender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp" />
+
+        <View
+            android:id="@+id/divider30"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout64"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="VENDER" />
-</LinearLayout>
+        android:background="#70C8C4C4"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout63"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#70C8C4C4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/tv_nombre"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="left"
+                android:text="Producto: "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_txtproducto"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout62"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#70C8C4C4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/tv_precio"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="left"
+                android:text="Precio: "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_txtprecio"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_weight="0"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center|top"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView118"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:text=" U. M.: "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner_umv"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#70C8C4C4"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/tv_cant"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="left"
+                android:text="Cantidad: "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/id_txtcant"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_weight="0"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnCalcular"
+                style="@style/Widget.MaterialComponents.TimePicker.Button"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:drawableRight="@drawable/calculate18"
+                android:gravity="center"
+                android:text="Calc. "
+                android:textColor="@color/black" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0" />
+
+            <TextView
+                android:id="@+id/id_txttotal"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center|top"
+                android:hint="TOTAL"
+                android:textColor="#D10F01"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout59"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#70C8C4C4"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <TextView
+                android:id="@+id/id_idprodven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_idiva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_totaliva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txtidumcant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txtiddescripum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout588"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#70C8C4C4"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <View
+                android:id="@+id/divider34"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout58"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#70C8C4C4"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="20dp">
+
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:drawableLeft="@drawable/add_shopping18"
+                android:text="Cargar" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
