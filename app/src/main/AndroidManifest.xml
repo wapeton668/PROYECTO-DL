@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.latinodistribuidora">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_app"
@@ -10,8 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".Actividades.Listar_ProductosVenta"/>
-        <activity android:name=".Actividades.Listar_ClientesVenta"/>
+        <activity android:name=".impresionT"></activity>
+        <activity android:name=".Actividades.Listar_ventas" />
+        <activity android:name=".Actividades.Listar_ProductosVenta" />
+        <activity android:name=".Actividades.Listar_ClientesVenta" />
         <activity android:name=".Actividades.Registrar_venta" />
         <activity android:name=".Actividades.Editar_Producto" />
         <activity android:name=".Actividades.Registrar_Productos" />

@@ -59,27 +59,30 @@
                 android:id="@+id/txtexenta"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="EXENTA"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtiva5"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="IVA 5%"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtiva10"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="IVA 10%"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -89,6 +92,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="TOTAL"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -101,27 +105,33 @@
                 android:id="@+id/idtotalexenta"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idtotal5"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idtotal10"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="0"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -131,7 +141,22 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
+                android:textColor="#D10101"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_idFVenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FINALIZAR VENTA" />
+        </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

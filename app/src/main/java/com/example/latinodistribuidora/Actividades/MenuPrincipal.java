@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.latinodistribuidora.MainActivity;
 import com.example.latinodistribuidora.R;
+import com.example.latinodistribuidora.impresionT;
 
 public class MenuPrincipal extends AppCompatActivity {
     private int idvendedor;
@@ -54,6 +55,12 @@ public class MenuPrincipal extends AppCompatActivity {
         Intent i = new Intent( this, Listar_ClientesVenta.class);
         i.putExtra("idVendedor",txtidvendedor.getText());
         i.putExtra("Vendedor",txtvendedor.getText());
+        startActivity(i);
+    }
+    public void irListarVentas(View view){
+        /*Intent i = new Intent( this, Listar_ventas.class);
+        startActivity(i);*/
+        Intent i = new Intent( this, impresionT.class);
         startActivity(i);
     }
 

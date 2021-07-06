@@ -29,7 +29,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:orientation="horizontal"
             android:paddingLeft="10dp">
@@ -110,15 +110,6 @@
                 android:textColor="@color/black"
                 android:textSize="17sp" />
 
-            <Button
-                android:id="@+id/btnRemove"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="15dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableStart="@drawable/ic_delete"
-                android:foregroundGravity="center" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -158,9 +149,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:animateLayoutChanges="true"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
             android:orientation="horizontal"
             android:paddingBottom="5dp">
 

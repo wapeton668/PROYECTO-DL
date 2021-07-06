@@ -42,6 +42,8 @@ public class Listar_ClientesVenta extends AppCompatActivity {
     private TextView pie;
     private EditText buscar;
     private String idvendedor,vendedor;
+    String idTim;
+    String idestab;
     String puntoex;
     String estab;
     String factactual;
@@ -118,7 +120,9 @@ public class Listar_ClientesVenta extends AppCompatActivity {
                 Clientes clientes = lista.get(clienteseleccionado);
                 String fechaF = obtenerFecha();
                 String establecimiento = obtenerEstab();
+                String idemision = obtenerIDEmision();
                 String puntoexpedicion = obtenerPE();
+                String idtimbrado = obtenerTimbrado();
                 String factA=obtenerFactura();
                 Intent in = new Intent(getApplicationContext(), Registrar_venta.class);
                 in.putExtra("idcliente", clientes.getIdcliente());
@@ -130,6 +134,8 @@ public class Listar_ClientesVenta extends AppCompatActivity {
                 in.putExtra("puntoexpedicion", puntoexpedicion);
                 in.putExtra("establecimiento", establecimiento);
                 in.putExtra("facturaactual",factA);
+                in.putExtra("idemision",idemision);
+                in.putExtra("idtimbrado",idtimbrado);
                 startActivity(in);
                 mode.finish();
                 finish();
@@ -148,7 +154,7 @@ public class Listar_ClientesVenta extends AppCompatActivity {
     public String obtenerFecha(){
         long ahora = System.currentTimeMillis();
         Date fecha = new Date(ahora);
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
         String fechaF = df.format(fecha);
         return fechaF;
     }
@@ -161,6 +167,16 @@ public class Listar_ClientesVenta extends AppCompatActivity {
             estab= "0";
         }
         return estab;
+    }
+    public String obtenerIDEmision(){
+        Access_PE db = new Access_PE(getApplicationContext());
+        Cursor e= db.getPEActivo();
+        if(e.moveToNext()){
+            idestab=String.valueOf(e.getInt(0));
+        }else{
+            idestab="0";
+        }
+        return idestab;
     }
     public String obtenerPE(){
         Access_PE pe = new Access_PE(getApplicationContext());
@@ -204,6 +220,17 @@ public class Listar_ClientesVenta extends AppCompatActivity {
                 break;
         }
         return factactual;
+    }
+
+    public String obtenerTimbrado(){
+        Access_Timbrado tim = new Access_Timbrado(getApplicationContext());
+        Cursor e= tim.getTimbradoActivo();
+        if(e.moveToNext()){
+            idTim=String.valueOf(e.getInt(0));
+        }else{
+            idTim="0";
+        }
+        return idTim;
     }
 
     public void llenarLista(){

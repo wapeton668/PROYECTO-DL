@@ -21,11 +21,38 @@
             android:gravity="left"
             android:orientation="vertical"
             android:paddingLeft="5dp"
+            android:paddingTop="3dp"
             android:paddingRight="5dp"
             android:paddingBottom="5dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingLeft="2dp"
+                    android:text="Operac. N°:"
+                    android:textColor="#131313"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/id_noper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    tools:ignore="DuplicateIds" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="left"
                 android:orientation="horizontal">
@@ -76,13 +103,29 @@
 
                 <TextView
                     android:id="@+id/id_nFact"
-                    android:layout_width="120dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="monospace"
                     android:text="0000000"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/id_idestab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/id_idtimbra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0" />
 
                 <TextView
                     android:id="@+id/id_Fecha"

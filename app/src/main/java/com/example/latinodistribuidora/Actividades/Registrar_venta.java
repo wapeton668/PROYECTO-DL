@@ -6,18 +6,20 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.latinodistribuidora.CRUD.Access_Venta;
 import com.example.latinodistribuidora.R;
 
 public class Registrar_venta extends AppCompatActivity{
     private int idCliente;
-    private String razonsocial,ruc,fecha,vendedor,idvendedor,establecimiento,puntoexpdicion,facturaA;
+    private String razonsocial,ruc,fecha,vendedor,idvendedor,establecimiento,puntoexpdicion,facturaA, idEmision, idTimbra;
     private TextView txtrazonsocial,txtruc,txtidcliente,
-            txtfecha, txtidvendedor, txtvendedor,txtestablecimiento,txtpuntoexpedicion,txtfacturaA;
+            txtfecha, txtidvendedor, txtvendedor,txtestablecimiento,txtpuntoexpedicion,txtfacturaA,txtoperacion;
 
     Fragment_Venta fragment_venta;
     Fragment_DetalleV fragment_detalleV;
@@ -37,6 +39,7 @@ public class Registrar_venta extends AppCompatActivity{
         txtestablecimiento = findViewById(R.id.id_estab);
         txtpuntoexpedicion = findViewById(R.id.id_pexp);
         txtfacturaA = findViewById(R.id.id_nFact);
+        txtoperacion = findViewById(R.id.id_noper);
 
         Bundle extras = this.getIntent().getExtras();
         if (extras != null) {
@@ -49,6 +52,8 @@ public class Registrar_venta extends AppCompatActivity{
             establecimiento= extras.getString("establecimiento");
             puntoexpdicion= extras.getString("puntoexpedicion");
             facturaA = extras.getString("facturaactual");
+            idEmision = extras.getString("idemision");
+            idTimbra = extras.getString("idtimbrado");
 
             txtestablecimiento.setText(establecimiento);
             txtpuntoexpedicion.setText(puntoexpdicion);
@@ -59,6 +64,10 @@ public class Registrar_venta extends AppCompatActivity{
             txtidvendedor.setText(idvendedor);
             txtvendedor.setText(vendedor);
             txtfacturaA.setText(facturaA);
+            ((TextView) findViewById(R.id.id_idestab)).setText(idEmision);
+            ((TextView) findViewById(R.id.id_idtimbra)).setText(idTimbra);
+            txtoperacion.setText(String.valueOf(ObtenerCodigo()));
+
         }
 
         fragment_venta = new Fragment_Venta();
@@ -67,6 +76,7 @@ public class Registrar_venta extends AppCompatActivity{
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmen, fragment_detalleV).hide(fragment_detalleV).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmen, fragment_finalV).hide(fragment_finalV).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmen, fragment_venta).commit();
+        EnviarDatosaFragmentDetalle();
 
     }
 
@@ -105,6 +115,7 @@ public class Registrar_venta extends AppCompatActivity{
 
                 }
                 //fragmentTransaction.replace(R.id.contenedorFragmen,fragment_detalleV);
+
                 break;
             case R.id.btnFVenta:
                 if (fragment_finalV.isAdded()) {
@@ -119,6 +130,7 @@ public class Registrar_venta extends AppCompatActivity{
                             .add(R.id.contenedorFragmen, fragment_finalV);
                     //fragmentTransaction.addToBackStack(null);
                 }
+                //EnviarDatosaFragmentFinalV();
                 //fragmentTransaction.replace(R.id.contenedorFragmen,fragment_finalV);
                 break;
         }
@@ -129,7 +141,6 @@ public class Registrar_venta extends AppCompatActivity{
     public void onBackPressed() {
         //super.onBackPressed();
         AlertaCerrar();
-
     }
 
     private void AlertaCerrar(){
@@ -153,5 +164,29 @@ public class Registrar_venta extends AppCompatActivity{
             }
         });
         alertDialog.show();
+    }
+
+    private void EnviarDatosaFragmentDetalle(){
+        Bundle datos = new Bundle();
+        datos.putInt("idventas", Integer.parseInt(txtoperacion.getText().toString()));
+        datos.putString("nrofactura", txtfacturaA.getText().toString());
+        datos.putString("condicion", ((TextView)findViewById(R.id.id_condicion)).getText().toString());
+        datos.putString("fecha",txtfecha.getText().toString());
+        datos.putInt("idcliente", Integer.parseInt(txtidcliente.getText().toString()));
+        datos.putInt("idusuario",Integer.parseInt(txtidvendedor.getText().toString()));
+        datos.putInt("idtimbrado", Integer.parseInt(((TextView) findViewById(R.id.id_idtimbra)).getText().toString()));
+        datos.putInt("idemision", Integer.parseInt(((TextView) findViewById(R.id.id_idestab)).getText().toString()));
+        fragment_detalleV.setArguments(datos);
+    }
+
+    private int ObtenerCodigo(){
+        Access_Venta db = Access_Venta.getInstance(getApplicationContext());
+        Cursor getCodigo=db.getCodigo();
+        int idOP = 0;
+        if(getCodigo.moveToFirst()){
+            idOP = getCodigo.getInt(0)+1;
+        }
+        
+        return idOP;
     }
 }

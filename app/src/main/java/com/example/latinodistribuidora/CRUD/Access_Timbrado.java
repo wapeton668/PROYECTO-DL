@@ -67,7 +67,7 @@ public class Access_Timbrado {
     }
     public Cursor getTimbradoActivo(){
         this.openWritable();
-        Cursor registros = db.rawQuery("Select * from timbrado where estado='S'", null);
+        Cursor registros = db.rawQuery("Select * from timbrado where estado='Activo'", null);
         return registros;
     }
 

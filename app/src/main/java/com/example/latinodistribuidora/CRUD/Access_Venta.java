@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.latinodistribuidora.Conexion.DatabaseOpenHelper;
 
@@ -59,9 +61,28 @@ public class Access_Venta {
 
 
 
+    public Cursor getv_venta(String texto){
+        this.openReadable();
+        registros = db.rawQuery("Select * from v_ventas where fecha like '%"+texto+"%'", null);
+        return registros;
+    }
+
+    public Cursor getFiltrarv_venta(String fechaactual,String texto){
+        this.openReadable();
+        Filtrar = db.rawQuery("select * from v_ventas where fecha like '%"+fechaactual+"%' and " +
+                "factura like '%"+texto+"%' or razon_social like '%"+texto+"%' or ruc like'%"+texto+"%' order by id asc", null);
+        return  Filtrar;
+    }
+
     public Cursor getVenta(){
         this.openWritable();
         registros = db.rawQuery("Select * from ventas where estado='S'", null);
+        return registros;
+    }
+
+    public Cursor getCodigo() {
+        this.openWritable();
+        registros = db.rawQuery("select MAX(idventas) from ventas",null);
         return registros;
     }
 
@@ -69,23 +90,71 @@ public class Access_Venta {
         this.openReadable();
         Filtrar = db.rawQuery("select * from v_clientes where razon_social like '%"+texto+"%' and estado='S'", null);
         return  Filtrar;
-    }
+    }*/
 
-    public long insertarClientes(String razon_social, String ruc, String direccion, String celular, int idciudad){
+    public long insertarventa(int idventas,String nrofactura, String condicion, String fecha, int total, int exenta, int iva5, int iva10, int idcliente,
+                              int idusuario, int idtimbrado, int idemision){
         ContentValues values = new ContentValues();
-        values.put("razon_social", razon_social);
-        values.put("ruc", ruc);
-        values.put("direccion", direccion);
-        values.put("telefono", celular);
+        values.put("idventas", idventas);
+        values.put("nrofactura", nrofactura);
+        values.put("condicion", condicion);
+        values.put("fecha", fecha);
+        values.put("total", total);
+        values.put("exenta", exenta);
+        values.put("iva5", iva5);
+        values.put("iva10", iva10);
         values.put("estado", "S");
-        values.put("ciudad_idciudad", idciudad);
+        values.put("cliente_idcliente", idcliente);
+        values.put("usuario_idusuario", idusuario);
+        values.put("idtimbrado", idtimbrado);
+        values.put("idemision", idemision);
 
-        long insertado = db.insert("clientes",null,values);
+        long insertado = db.insert("ventas",null,values);
 
         return insertado;
     }
 
-    public Cursor getCliente_a_modificar(int clienteEditar) {
+    public long insertarDetalle(int idventa, int idproducto, String cantidad, int precio,int total, int impuesto){
+        ContentValues values = new ContentValues();
+        values.put("venta_idventa", idventa);
+        values.put("productos_idproductos", idproducto);
+        values.put("cantidad", cantidad);
+        values.put("precio", precio);
+        values.put("total", total);
+        values.put("impuesto_aplicado", impuesto);
+        long insertado = db.insert("detalleventa",null,values);
+        return insertado;
+    }
+
+   /* public boolean insertarDetalle(int idventa, int idproducto, String cantidad, int precio, int impuesto){
+
+        boolean wasSuccess = true;
+        try{
+            db.beginTransaction();
+            ContentValues values = new ContentValues();
+            values.put("venta_idventa", idventa);
+            values.put("productos_idproductos", idventa);
+            values.put("cantidad", idventa);
+            values.put("precio", idventa);
+            values.put("impuesto_aplicado", idventa);
+            long insertado = db.insert("detalleventa",null,values);
+            if (insertado==-1){
+                wasSuccess=false;
+            }else {
+                db.setTransactionSuccessful();
+            }
+        }catch (Exception e){
+            Log.i("jd",e.getMessage());
+            //
+            //db.close();
+        }
+        db.endTransaction();
+        db.close();
+        return wasSuccess;
+
+    }*/
+
+    /*public Cursor getCliente_a_modificar(int clienteEditar) {
         this.openReadable();
         registros = db.rawQuery("Select * from v_clientes where idcliente="+clienteEditar, null);
         return  registros;

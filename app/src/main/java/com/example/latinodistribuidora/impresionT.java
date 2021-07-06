@@ -1,15 +1,8 @@
-package com.example.latinodistribuidora.Actividades;
+package com.example.latinodistribuidora;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import com.example.latinodistribuidora.R;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -28,9 +21,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
-
-public class Fragment_FinalV extends Fragment {
-    View vista;
+public class impresionT extends AppCompatActivity {
     // will show the statuses like bluetooth open, close or data sent
     TextView myLabel;
 
@@ -52,27 +43,19 @@ public class Fragment_FinalV extends Fragment {
     volatile boolean stopWorker;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        vista = inflater.inflate(R.layout.fragment__final_v, container, false);
+        setContentView(R.layout.activity_impresion_t);
         try {
             // more codes will be here
             // we are going to have three buttons for specific functions
-            Button openButton = (Button) vista.findViewById(R.id.open);
-            Button sendButton = (Button) vista.findViewById(R.id.send);
-            Button closeButton = (Button) vista.findViewById(R.id.close);
+            Button openButton = (Button) findViewById(R.id.open);
+            Button sendButton = (Button) findViewById(R.id.send);
+            Button closeButton = (Button) findViewById(R.id.close);
 
             // text label and input box
-            myLabel = (TextView) vista.findViewById(R.id.label);
-            myTextbox = (EditText) vista.findViewById(R.id.entry);
+            myLabel = (TextView) findViewById(R.id.label);
+            myTextbox = (EditText) findViewById(R.id.entry);
 
             // open bluetooth connection
             openButton.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +65,7 @@ public class Fragment_FinalV extends Fragment {
                         findBT();
                         openBT();
                     } catch (IOException ex) {
-                        Toast.makeText(getContext(),"open: "+ex.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"open: "+ex.getMessage(),Toast.LENGTH_LONG).show();
                         //ex.printStackTrace();
                     }
                 }
@@ -95,7 +78,7 @@ public class Fragment_FinalV extends Fragment {
                     try {
                         sendData();
                     } catch (IOException ex) {
-                        Toast.makeText(getContext(),"send: "+ex.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"send: "+ex.getMessage(),Toast.LENGTH_LONG).show();
                         //ex.printStackTrace();
                     }
                 }
@@ -108,17 +91,17 @@ public class Fragment_FinalV extends Fragment {
                     try {
                         closeBT();
                     } catch (IOException ex) {
-                        Toast.makeText(getContext(),"close: "+ex.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"close: "+ex.getMessage(),Toast.LENGTH_LONG).show();
                         //ex.printStackTrace();
                     }
                 }
             });
         }catch(Exception e) {
-            Toast.makeText(getContext(),"FATAL: "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"FATAL: "+e.getMessage(),Toast.LENGTH_LONG).show();
             //e.printStackTrace();
         }
-        return vista;
     }
+
     // this will find a bluetooth printer device
     private void findBT() {
 
@@ -129,8 +112,9 @@ public class Fragment_FinalV extends Fragment {
                 myLabel.setText("No hay adaptador bluetooth disponible.");
             }
 
-            if(!mBluetoothAdapter.isEnabled()) {
+            if(mBluetoothAdapter.isEnabled()) {
                 Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                //startActivity(enableBluetooth);
                 startActivityForResult(enableBluetooth, 0);
             }
 
@@ -152,7 +136,7 @@ public class Fragment_FinalV extends Fragment {
             myLabel.setText("Se encontró un dispositivo Bluetooth.");
 
         }catch(Exception e){
-            Toast.makeText(getContext(),"findBT: "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"findBT: "+e.getMessage(),Toast.LENGTH_LONG).show();
             //e.printStackTrace();
         }
     }
@@ -162,20 +146,19 @@ public class Fragment_FinalV extends Fragment {
         try {
 
             // Standard SerialPortService ID
-            //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
-            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+            //UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
             mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
             mmSocket.connect();
             mmOutputStream = mmSocket.getOutputStream();
             mmInputStream = mmSocket.getInputStream();
-
 
             beginListenForData();
 
             myLabel.setText("Bluetooth abierto.");
 
         } catch (Exception e) {
-            Toast.makeText(getContext(),"openBT: "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"openBT: "+e.getMessage(),Toast.LENGTH_LONG).show();
             //e.printStackTrace();
         }
     }
@@ -252,7 +235,7 @@ public class Fragment_FinalV extends Fragment {
             workerThread.start();
 
         } catch (Exception e) {
-            Toast.makeText(getContext(),"beginListenForData: "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"beginListenForData: "+e.getMessage(),Toast.LENGTH_LONG).show();
             //e.printStackTrace();
         }
     }
@@ -263,16 +246,15 @@ public class Fragment_FinalV extends Fragment {
 
             // the text typed by the user
             String msg = myTextbox.getText().toString();
-            msg += "\n";
+            //msg += "\n";
 
             mmOutputStream.write(msg.getBytes());
-            //mmInputStream.read(msg.getBytes());
 
             // tell the user data were sent
             myLabel.setText("Datos enviados.");
 
-        } catch (Exception e) {
-            Toast.makeText(getContext(),"sendData: "+e.getMessage(),Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            Toast.makeText(getApplicationContext(),"sendData: "+e.getMessage(),Toast.LENGTH_LONG).show();
             //e.printStackTrace();
         }
     }
@@ -286,7 +268,7 @@ public class Fragment_FinalV extends Fragment {
             mmSocket.close();
             myLabel.setText("Bluetooth cerrado");
         } catch (Exception e) {
-            Toast.makeText(getContext(),"closeBT: "+e.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"closeBT: "+e.getMessage(),Toast.LENGTH_LONG).show();
             //e.printStackTrace();
         }
     }
