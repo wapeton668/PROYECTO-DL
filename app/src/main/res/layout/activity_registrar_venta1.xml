@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#70C8C4C4"
+            android:background="#009688"
             android:gravity="left"
             android:orientation="vertical"
             android:paddingLeft="5dp"
@@ -34,10 +34,10 @@
                 <TextView
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Operac. N°:"
-                    android:textColor="#131313"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -46,7 +46,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
                     tools:ignore="DuplicateIds" />
 
             </LinearLayout>
@@ -60,10 +61,10 @@
                 <TextView
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Factura N°:"
-                    android:textColor="#131313"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -71,9 +72,9 @@
                     android:id="@+id/id_estab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:text="001"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     tools:ignore="DuplicateIds" />
 
@@ -81,16 +82,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     tools:ignore="DuplicateIds" />
 
                 <TextView
                     android:id="@+id/id_pexp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:text="001"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     tools:ignore="DuplicateIds" />
 
@@ -98,16 +99,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     tools:ignore="DuplicateIds" />
 
                 <TextView
                     android:id="@+id/id_nFact"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:text="0000000"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     tools:ignore="DuplicateIds" />
 
@@ -117,7 +118,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0" />
+                    android:text="0"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/id_idtimbra"
@@ -125,16 +127,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0" />
+                    android:text="0"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/id_Fecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
+                    android:paddingRight="5dp"
                     android:text="31/31/2021"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -146,10 +150,10 @@
                 <TextView
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Vendedor:"
-                    android:textColor="#131313"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -158,9 +162,9 @@
                     android:layout_width="254dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:text="Nombre Vendedor"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -168,7 +172,8 @@
                     android:layout_width="28dp"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -180,10 +185,10 @@
                 <TextView
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Cliente:"
-                    android:textColor="#131313"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -192,9 +197,9 @@
                     android:layout_width="254dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:text="Despensa Divino Niño Jesus"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -202,7 +207,8 @@
                     android:layout_width="28dp"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -214,10 +220,10 @@
                 <TextView
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="RUC:"
-                    android:textColor="#131313"
+                    android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -226,9 +232,9 @@
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:text="80008448-9"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
@@ -236,11 +242,13 @@
                     android:layout_width="126dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="monospace"
+                    android:fontFamily="sans-serif"
                     android:gravity="center"
+                    android:paddingRight="10dp"
                     android:text="Contado"
-                    android:textColor="#1E5E20"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>
@@ -250,7 +258,7 @@
         android:id="@+id/linearLayout53"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#E3DFDF"
+        android:background="#009688"
 
         android:gravity="center"
         android:orientation="horizontal"
@@ -267,9 +275,9 @@
             android:layout_weight="1"
             android:onClick="onClick"
             android:text="cargar"
-            android:textColor="#3F51B5"
-            android:textSize="12sp"
-            android:textStyle="normal" />
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnDVenta"
@@ -279,21 +287,9 @@
             android:layout_weight="2"
             android:onClick="onClick"
             android:text="DETALLE DE VENTA"
-            android:textColor="#3F51B5"
-            android:textSize="12sp"
-            android:textStyle="normal" />
-
-        <Button
-            android:id="@+id/btnFVenta"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="FINALIZAR"
-            android:textColor="#3F51B5"
-            android:textSize="12sp"
-            android:textStyle="normal" />
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

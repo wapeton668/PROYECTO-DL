@@ -1,6 +1,8 @@
 package com.example.latinodistribuidora;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -17,7 +19,7 @@ import com.example.latinodistribuidora.Actividades.Registrar_venta;
 import com.example.latinodistribuidora.CRUD.Access_Usuarios;
 import com.example.latinodistribuidora.R;
 
-public class MainActivity<Public> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     public EditText usuario, contrasena;
 
     @Override

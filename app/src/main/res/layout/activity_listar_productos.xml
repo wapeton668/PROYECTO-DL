@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout50"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,8 @@
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/product48" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,7 +49,7 @@
             android:id="@+id/id_buscarproductos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/search"
+            android:drawableLeft="@drawable/ic_search"
             android:ems="10"
             android:hint="Buscador"
             android:inputType="textPersonName" />
@@ -63,7 +64,7 @@
         android:id="@+id/linearLayout51"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

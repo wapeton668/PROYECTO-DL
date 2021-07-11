@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout28"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp"
             android:paddingStart="10dp"
@@ -51,9 +52,9 @@
                 android:id="@+id/textView50"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Razón Social:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -70,9 +71,9 @@
                 android:id="@+id/textView51"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="R.U.C.:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -89,9 +90,9 @@
                 android:id="@+id/textView52"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Dirección:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -108,9 +109,9 @@
                 android:id="@+id/textView53"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Teléfono:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -127,9 +128,9 @@
                 android:id="@+id/textView54"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Ciudad:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -154,9 +155,11 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@android:drawable/ic_menu_save"
+                android:drawablePadding="10dp"
                 android:onClick="Modificar"
                 android:text="@string/btnmodificar" />
 

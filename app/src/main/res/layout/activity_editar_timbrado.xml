@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout43"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,15 +46,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView60"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Timbrado:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -75,9 +76,9 @@
                 android:id="@+id/textView29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Vigencia:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -109,7 +110,7 @@
 
             <Switch
                 android:id="@+id/id_switch_mod"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
                 android:onClick="onClick"
@@ -125,7 +126,6 @@
                 android:id="@+id/id_estado_modif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
                 android:gravity="center"
                 android:textColor="#4CAF50"
                 android:textSize="24sp" />
@@ -153,9 +153,11 @@
 
             <Button
                 android:id="@+id/id_btnMT"
-                android:layout_width="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@android:drawable/ic_menu_save"
+                android:drawablePadding="10dp"
                 android:onClick="Modificar"
                 android:text="@string/btnmodificar" />
 

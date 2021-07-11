@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,9 +57,9 @@
                 android:id="@+id/textView86"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Nombre y Apellido:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -76,9 +76,9 @@
                 android:id="@+id/textView87"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Cédula de identidad:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -95,9 +95,9 @@
                 android:id="@+id/textView88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Dirección:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -114,9 +114,9 @@
                 android:id="@+id/textView89"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Celular:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -139,9 +139,9 @@
                 android:id="@+id/textView90"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Usuario:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -158,9 +158,9 @@
                 android:id="@+id/textView91"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Contraseña:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -177,9 +177,9 @@
                 android:id="@+id/textView92"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Confirmar contraseña:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -208,9 +208,11 @@
 
             <Button
                 android:id="@+id/idguardar_registro"
-                android:layout_width="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@android:drawable/ic_menu_save"
+                android:drawablePadding="10dp"
                 android:gravity="center"
                 android:onClick="btn_registrar"
                 android:text="GUARDAR REGISTRO" />

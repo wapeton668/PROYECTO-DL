@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout65"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,8 @@
             android:text="LISTADO DE VENTAS"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/ventas48" />
 
     </LinearLayout>
 
@@ -56,7 +57,7 @@
         android:id="@+id/linearLayout31"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

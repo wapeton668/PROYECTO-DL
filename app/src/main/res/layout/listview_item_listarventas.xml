@@ -47,14 +47,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/divider31"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/tv_timbrado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -63,6 +69,8 @@
                 android:id="@+id/tv_factura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -71,6 +79,8 @@
                 android:id="@+id/tv_fecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -79,6 +89,8 @@
                 android:id="@+id/tv_vendedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -87,15 +99,25 @@
                 android:id="@+id/tv_cliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
+
+            <View
+                android:id="@+id/divider33"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/tv_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="15sp"

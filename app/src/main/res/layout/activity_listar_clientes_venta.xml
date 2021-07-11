@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,8 @@
             android:text="INICIAR VENTA"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/vender48" />
 
         <View
             android:id="@+id/divider16"
@@ -67,7 +68,7 @@
             android:id="@+id/id_buscarclienteV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/search"
+            android:drawableLeft="@drawable/ic_search"
             android:ems="10"
             android:hint="Buscador"
             android:inputType="textPersonName" />

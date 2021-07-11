@@ -23,7 +23,6 @@ public class Registrar_venta extends AppCompatActivity{
 
     Fragment_Venta fragment_venta;
     Fragment_DetalleV fragment_detalleV;
-    Fragment_FinalV fragment_finalV;
 
 
     @Override
@@ -72,9 +71,7 @@ public class Registrar_venta extends AppCompatActivity{
 
         fragment_venta = new Fragment_Venta();
         fragment_detalleV = new Fragment_DetalleV();
-        fragment_finalV = new Fragment_FinalV();
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmen, fragment_detalleV).hide(fragment_detalleV).commit();
-        getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmen, fragment_finalV).hide(fragment_finalV).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmen, fragment_venta).commit();
         EnviarDatosaFragmentDetalle();
 
@@ -87,14 +84,12 @@ public class Registrar_venta extends AppCompatActivity{
                 if (fragment_venta.isAdded()) {
                     fragmentTransaction
                             .show(fragment_venta)
-                            .hide(fragment_detalleV)
-                            .hide(fragment_finalV);
+                            .hide(fragment_detalleV);
 
                 } else {
                     fragmentTransaction
                             .add(R.id.contenedorFragmen, fragment_venta)
-                            .hide(fragment_detalleV)
-                            .hide(fragment_finalV);
+                            .hide(fragment_detalleV);
 
                 }
 
@@ -104,34 +99,16 @@ public class Registrar_venta extends AppCompatActivity{
                 if (fragment_detalleV.isAdded()) {
                     fragmentTransaction
                             .hide(fragment_venta)
-                            .show(fragment_detalleV)
-                            .hide(fragment_finalV);
+                            .show(fragment_detalleV);
 
                 } else {
                     fragmentTransaction
                             .hide(fragment_venta)
-                            .add(R.id.contenedorFragmen, fragment_detalleV)
-                            .hide(fragment_finalV);
+                            .add(R.id.contenedorFragmen, fragment_detalleV);
 
                 }
                 //fragmentTransaction.replace(R.id.contenedorFragmen,fragment_detalleV);
 
-                break;
-            case R.id.btnFVenta:
-                if (fragment_finalV.isAdded()) {
-                    fragmentTransaction
-                            .hide(fragment_venta)
-                            .hide(fragment_detalleV)
-                            .show(fragment_finalV);
-                } else {
-                    fragmentTransaction
-                            .hide(fragment_venta)
-                            .hide(fragment_detalleV)
-                            .add(R.id.contenedorFragmen, fragment_finalV);
-                    //fragmentTransaction.addToBackStack(null);
-                }
-                //EnviarDatosaFragmentFinalV();
-                //fragmentTransaction.replace(R.id.contenedorFragmen,fragment_finalV);
                 break;
         }
         fragmentTransaction.commit();
@@ -169,11 +146,16 @@ public class Registrar_venta extends AppCompatActivity{
     private void EnviarDatosaFragmentDetalle(){
         Bundle datos = new Bundle();
         datos.putInt("idventas", Integer.parseInt(txtoperacion.getText().toString()));
+        datos.putString("nestablecimiento", txtestablecimiento.getText().toString());
+        datos.putString("nemision", txtpuntoexpedicion.getText().toString());
         datos.putString("nrofactura", txtfacturaA.getText().toString());
         datos.putString("condicion", ((TextView)findViewById(R.id.id_condicion)).getText().toString());
         datos.putString("fecha",txtfecha.getText().toString());
         datos.putInt("idcliente", Integer.parseInt(txtidcliente.getText().toString()));
+        datos.putString("Vcliente",txtrazonsocial.getText().toString());
+        datos.putString("Vruc",txtruc.getText().toString());
         datos.putInt("idusuario",Integer.parseInt(txtidvendedor.getText().toString()));
+        datos.putString("vendedor",txtvendedor.getText().toString());
         datos.putInt("idtimbrado", Integer.parseInt(((TextView) findViewById(R.id.id_idtimbra)).getText().toString()));
         datos.putInt("idemision", Integer.parseInt(((TextView) findViewById(R.id.id_idestab)).getText().toString()));
         fragment_detalleV.setArguments(datos);

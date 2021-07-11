@@ -114,7 +114,7 @@ public class Access_Venta {
         return insertado;
     }
 
-    public long insertarDetalle(int idventa, int idproducto, String cantidad, int precio,int total, int impuesto){
+    public long insertarDetalle(int idventa, int idproducto, String cantidad, int precio,int total, int impuesto, String um){
         ContentValues values = new ContentValues();
         values.put("venta_idventa", idventa);
         values.put("productos_idproductos", idproducto);
@@ -122,6 +122,7 @@ public class Access_Venta {
         values.put("precio", precio);
         values.put("total", total);
         values.put("impuesto_aplicado", impuesto);
+        values.put("um", um);
         long insertado = db.insert("detalleventa",null,values);
         return insertado;
     }

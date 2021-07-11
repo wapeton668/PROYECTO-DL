@@ -16,21 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView102"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="DETALLE DE VENTA"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <View
-            android:id="@+id/divider33"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
         <ListView
             android:id="@+id/id_listadetallev"
             android:layout_width="match_parent"
@@ -41,29 +26,34 @@
         android:id="@+id/linearLayout66"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#70C8C4C4"
+        android:background="#009688"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <View
+            android:id="@+id/divider35"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
 
             <TextView
                 android:id="@+id/txtexenta"
                 android:layout_width="30dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:gravity="center"
                 android:text="EXENTA"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/txtiva5"
@@ -73,7 +63,8 @@
                 android:gravity="center"
                 android:text="IVA 5%"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/txtiva10"
@@ -83,23 +74,26 @@
                 android:gravity="center"
                 android:text="IVA 10%"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/txttotalF"
-                android:layout_width="30dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="TOTAL"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
 
             <TextView
                 android:id="@+id/idtotalexenta"
@@ -110,7 +104,8 @@
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/idtotal5"
@@ -121,7 +116,8 @@
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/idtotal10"
@@ -132,17 +128,18 @@
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:id="@+id/idtotalfinal"
-                android:layout_width="30dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0"
-                android:textColor="#D10101"
-                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -151,11 +148,69 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_idFVenta"
+            <TextView
+                android:id="@+id/myLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="FINALIZAR VENTA" />
+                android:paddingLeft="10dp"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/divider30"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnBT"
+                    style="@android:style/Widget.ActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_bluetooth_searching"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btn_idFVenta"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:drawableLeft="@android:drawable/ic_menu_save"
+                    android:text="Guardar"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnImprimir"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+                    android:text="FACTURAR"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnfinal"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
+                    android:text="Fin"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

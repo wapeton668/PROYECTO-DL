@@ -18,33 +18,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <View
-            android:id="@+id/divider31"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
         <EditText
             android:id="@+id/id_buscarproductosV"
             android:layout_width="198dp"
-            android:layout_height="37dp"
-            android:drawableLeft="@drawable/search"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_search"
             android:ems="10"
             android:hint="Buscador"
             android:inputType="textPersonName"
-            android:textSize="14sp" />
+            android:paddingLeft="10dp"
+            android:textSize="16sp" />
 
         <ListView
             android:id="@+id/list_prodavender"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp" />
-
-        <View
-            android:id="@+id/divider30"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
 
     </LinearLayout>
 
@@ -52,9 +42,11 @@
         android:id="@+id/linearLayout64"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#70C8C4C4"
+        android:background="#009688"
         android:gravity="bottom"
         android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -63,10 +55,10 @@
             android:id="@+id/linearLayout63"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#70C8C4C4"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
+            android:paddingTop="10dp"
             android:paddingRight="5dp">
 
             <TextView
@@ -76,18 +68,18 @@
                 android:layout_weight="0"
                 android:gravity="left"
                 android:text="Producto: "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/id_txtproducto"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_weight="2"
                 android:background="@android:drawable/editbox_background_normal"
-                android:gravity="center"
-                android:textColor="#4CAF50"
+                android:gravity="left"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -96,7 +88,6 @@
             android:id="@+id/linearLayout62"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#70C8C4C4"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
@@ -109,18 +100,18 @@
                 android:layout_weight="0"
                 android:gravity="left"
                 android:text="Precio: "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/id_txtprecio"
                 android:layout_width="100dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_weight="0"
                 android:background="@android:drawable/editbox_background_normal"
                 android:gravity="center|top"
-                android:textColor="#4CAF50"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -132,7 +123,7 @@
                 android:gravity="center"
                 android:paddingLeft="5dp"
                 android:text=" U. M.: "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -147,7 +138,6 @@
             android:id="@+id/linearLayout60"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#70C8C4C4"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
@@ -160,14 +150,14 @@
                 android:layout_weight="0"
                 android:gravity="left"
                 android:text="Cantidad: "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/id_txtcant"
                 android:layout_width="60dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_weight="0"
                 android:background="@android:drawable/editbox_background_normal"
                 android:gravity="center"
@@ -185,7 +175,8 @@
                 android:drawableRight="@drawable/calculate18"
                 android:gravity="center"
                 android:text="Calc. "
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:visibility="invisible" />
 
             <Space
                 android:layout_width="30dp"
@@ -195,13 +186,13 @@
             <TextView
                 android:id="@+id/id_txttotal"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@android:drawable/editbox_background_normal"
-                android:gravity="center|top"
+                android:gravity="center"
                 android:hint="TOTAL"
-                android:textColor="#D10F01"
-                android:textSize="18sp"
+                android:textColor="#FB1303"
+                android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -209,7 +200,6 @@
             android:id="@+id/linearLayout59"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#70C8C4C4"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
             android:paddingRight="5dp">
@@ -250,11 +240,9 @@
             android:id="@+id/linearLayout588"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#70C8C4C4"
             android:gravity="right"
             android:orientation="vertical"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp">
+            android:paddingTop="5dp">
 
             <View
                 android:id="@+id/divider34"
@@ -266,18 +254,19 @@
         <LinearLayout
             android:id="@+id/linearLayout58"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#70C8C4C4"
-            android:gravity="right"
-            android:orientation="vertical"
-            android:paddingRight="20dp">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnEnviar"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:drawableLeft="@drawable/add_shopping18"
-                android:text="Cargar" />
+                android:layout_height="wrap_content"
+                android:drawableLeft="@android:drawable/ic_menu_add"
+                android:drawablePadding="10dp"
+                android:text="AGREGAR PRODUCTO"
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </LinearLayout>

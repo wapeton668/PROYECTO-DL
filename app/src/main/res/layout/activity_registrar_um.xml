@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout36"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,15 +47,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView84"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Unidad de medida:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -72,9 +73,9 @@
                 android:id="@+id/textView85"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EDEAEA"
+                android:background="#81009688"
                 android:text="Cantidad a aplicar:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -103,9 +104,11 @@
 
             <Button
                 android:id="@+id/id_btnRUM"
-                android:layout_width="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/editbox_background"
+                android:drawableLeft="@android:drawable/ic_menu_save"
+                android:drawablePadding="10dp"
                 android:onClick="btn_registrar"
                 android:text="@string/btnregistrar" />
         </LinearLayout>

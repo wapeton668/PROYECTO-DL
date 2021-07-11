@@ -154,7 +154,7 @@ public class Listar_ClientesVenta extends AppCompatActivity {
     public String obtenerFecha(){
         long ahora = System.currentTimeMillis();
         Date fecha = new Date(ahora);
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
         String fechaF = df.format(fecha);
         return fechaF;
     }

@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout12"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:gravity="bottom|center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,8 @@
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/ubicacion" />
 
     </LinearLayout>
 
@@ -60,7 +61,7 @@
         android:id="@+id/linearLayout23"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

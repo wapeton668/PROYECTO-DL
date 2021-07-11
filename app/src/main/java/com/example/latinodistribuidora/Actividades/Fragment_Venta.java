@@ -1,5 +1,6 @@
 package com.example.latinodistribuidora.Actividades;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -119,19 +121,61 @@ public class Fragment_Venta extends Fragment {
         consultarlistaUM();
         ArrayAdapter<String> adaptadorUM = new ArrayAdapter(getContext(), R.layout.spinner_item_ldventa,listaum);
         comboUM.setAdapter(adaptadorUM);
-        //int indexUM= getIndexSpinnerUM(comboUM, txtumdescripcion.getText().toString());
-        //comboUM.setSelection(indexUM);
         comboUM.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 try{
                     if(position!=0){
                         txtumCant.setText(String.valueOf(umlist.get(position-1).getCant()));
+                        try{
+                            if(txtidproducto.getText().toString().trim().isEmpty()){
+                                //Toast.makeText(getContext(),"No ha seleccionado ningún producto",Toast.LENGTH_SHORT).show();
+                            }else if(txtCantidad.getText().toString().trim().isEmpty()){
+                                //Toast.makeText(getContext(),"Ingrese cantidad",Toast.LENGTH_SHORT).show();
+                                txtCantidad.requestFocus();
+                                txtTotalVenta.setText("");
+                            }else if(Float.parseFloat(txtCantidad.getText().toString())<=0){
+                                //Toast.makeText(getContext(),"Ingrese cantidad válida",Toast.LENGTH_SHORT).show();
+                                txtCantidad.requestFocus();
+                                txtTotalVenta.setText("");
+                            }else{
+                                int cantum = Integer.parseInt(txtumCant.getText().toString());
+                                Float cantventa = Float.parseFloat(txtCantidad.getText().toString());
+                                int precioventa = Integer.parseInt(txtprecio.getText().toString());
+                                int total= (int) ((cantum*cantventa)*precioventa);
+                                txtTotalVenta.setText(String.valueOf(total));
+                                int imp=Integer.parseInt(((TextView) vista.findViewById(R.id.txt_idiva)).getText().toString());
+                                switch (imp){
+                                    case 0:
+                                        exenta=0;
+                                        iva5=0;
+                                        iva10=0;
+                                        txttotaliva.setText(String.valueOf(exenta));
+                                        break;
+                                    case 5:
+                                        exenta=0;
+                                        //iva5=total/21;
+                                        iva5=total;
+                                        iva10=0;
+                                        txttotaliva.setText(String.valueOf(iva5));
+                                        break;
+                                    case 10:
+                                        exenta=0;
+                                        iva5=0;
+                                        //iva10=total/11;
+                                        iva10=total;
+                                        txttotaliva.setText(String.valueOf(iva10));
+                                        break;
+                                }
+
+                            }
+                        }catch (Exception e){}
                     }else{
-                        txtumCant.setText("0");
+                        txtumCant.setText("");
+                        txtTotalVenta.setText("");
                     }
                 }catch (Exception e){
-                    Toast.makeText(getContext(), "error: "+e.getMessage(),Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getContext(), "error: "+e.getMessage(),Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -140,17 +184,76 @@ public class Fragment_Venta extends Fragment {
 
             }
         });
+        txtCantidad.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try{
+                    if(txtidproducto.getText().toString().trim().isEmpty()){
+                       // Toast.makeText(getContext(),"No ha seleccionado ningún producto",Toast.LENGTH_SHORT).show();
+                    }else if(txtCantidad.getText().toString().trim().isEmpty()){
+                        //Toast.makeText(getContext(),"Ingrese cantidad",Toast.LENGTH_SHORT).show();
+                        txtCantidad.requestFocus();
+                        txtTotalVenta.setText("");
+                    }else if(Float.parseFloat(txtCantidad.getText().toString())<=0){
+                        //Toast.makeText(getContext(),"Ingrese cantidad válida",Toast.LENGTH_SHORT).show();
+                        txtCantidad.requestFocus();
+                        txtTotalVenta.setText("");
+                    }else{
+                        int cantum = Integer.parseInt(txtumCant.getText().toString());
+                        Float cantventa = Float.parseFloat(txtCantidad.getText().toString());
+                        int precioventa = Integer.parseInt(txtprecio.getText().toString());
+                        int total= (int) ((cantum*cantventa)*precioventa);
+                        txtTotalVenta.setText(String.valueOf(total));
+                        int imp=Integer.parseInt(((TextView) vista.findViewById(R.id.txt_idiva)).getText().toString());
+                        switch (imp){
+                            case 0:
+                                exenta=0;
+                                iva5=0;
+                                iva10=0;
+                                txttotaliva.setText(String.valueOf(exenta));
+                                break;
+                            case 5:
+                                exenta=0;
+                                //iva5=total/21;
+                                iva5=total;
+                                iva10=0;
+                                txttotaliva.setText(String.valueOf(iva5));
+                                break;
+                            case 10:
+                                exenta=0;
+                                iva5=0;
+                                //iva10=total/11;
+                                iva10=total;
+                                txttotaliva.setText(String.valueOf(iva10));
+                                break;
+                        }
+
+                    }
+                }catch (Exception e){}
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(txtidproducto.getText().toString().trim().isEmpty()){
-                    Toast.makeText(getContext(),"No ha seleccionado ningún producto",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"No ha seleccionado ningún producto",Toast.LENGTH_SHORT).show();
                 }else if(txtCantidad.getText().toString().trim().isEmpty()){
-                    Toast.makeText(getContext(),"Ingrese cantidad",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"Ingrese cantidad",Toast.LENGTH_SHORT).show();
                     txtCantidad.requestFocus();
                 }else if(Float.parseFloat(txtCantidad.getText().toString())<=0){
-                    Toast.makeText(getContext(),"Ingrese cantidad válida",Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getContext(),"Ingrese cantidad válida",Toast.LENGTH_SHORT).show();
                     txtCantidad.requestFocus();
                 }else{
                     int cantum = Integer.parseInt(txtumCant.getText().toString());
@@ -168,14 +271,16 @@ public class Fragment_Venta extends Fragment {
                             break;
                         case 5:
                             exenta=0;
-                            iva5=total/21;
+                            //iva5=total/21;
+                            iva5=total;
                             iva10=0;
                             txttotaliva.setText(String.valueOf(iva5));
                             break;
                         case 10:
                             exenta=0;
                             iva5=0;
-                            iva10=total/11;
+                            //iva10=total/11;
+                            iva10=total;
                             txttotaliva.setText(String.valueOf(iva10));
                             break;
                     }
@@ -187,39 +292,52 @@ public class Fragment_Venta extends Fragment {
         ((Button)view.findViewById(R.id.btnEnviar)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(((TextView) view.findViewById(R.id.id_txttotal)).getText().toString().trim().isEmpty()){
-                    ((Button) view.findViewById(R.id.btnCalcular)).requestFocusFromTouch();
-                    Toast.makeText(getActivity(),"Falta calcular el total de esta venta",Toast.LENGTH_SHORT).show();
-                }else{
-                    String id=((TextView) view.findViewById(R.id.id_idprodven)).getText().toString();
-                    String producto=((TextView  ) view.findViewById(R.id.id_txtproducto)).getText().toString();
-                    String precio = ((TextView) view.findViewById(R.id.id_txtprecio)).getText().toString();
-                    String cantidad = ((EditText) view.findViewById(R.id.id_txtcant)).getText().toString();
-                    String um= ((Spinner) view.findViewById(R.id.spinner_umv)).getSelectedItem().toString();
-                    int total= Integer.parseInt(((TextView) view.findViewById(R.id.id_txttotal)).getText().toString());
-                    String ivadescripcion = ((TextView) view.findViewById(R.id.txt_idiva)).getText().toString();
+                try{
+                    if(((TextView) view.findViewById(R.id.id_txttotal)).getText().toString().trim().isEmpty()){
+                        Toast.makeText(getActivity(),"Falta calcular el total de esta venta",Toast.LENGTH_SHORT).show();
+                    }else{
+                        String id=((TextView) view.findViewById(R.id.id_idprodven)).getText().toString();
+                        String producto=((TextView  ) view.findViewById(R.id.id_txtproducto)).getText().toString();
+                        String precio = ((TextView) view.findViewById(R.id.id_txtprecio)).getText().toString();
+                        String cantidad = ((EditText) view.findViewById(R.id.id_txtcant)).getText().toString();
+                        String um= ((Spinner) view.findViewById(R.id.spinner_umv)).getSelectedItem().toString();
+                        int total= Integer.parseInt(((TextView) view.findViewById(R.id.id_txttotal)).getText().toString());
+                        String ivadescripcion = ((TextView) view.findViewById(R.id.txt_idiva)).getText().toString();
 
-                    Bundle enviar = new Bundle();
-                    enviar.putString("id",id);
-                    enviar.putString("producto",producto);
-                    enviar.putString("precio",precio);
-                    enviar.putString("cantidad",cantidad);
-                    enviar.putString("um",um);
-                    enviar.putInt("total",total);
-                    enviar.putString("ivadescripcion",ivadescripcion);
-                    enviar.putInt("exenta",exenta);
-                    enviar.putInt("iva5",iva5);
-                    enviar.putInt("iva10",iva10);
+                        Bundle enviar = new Bundle();
+                        enviar.putString("id",id);
+                        enviar.putString("producto",producto);
+                        enviar.putString("precio",precio);
+                        enviar.putString("cantidad",cantidad);
+                        enviar.putString("um",um);
+                        enviar.putInt("total",total);
+                        enviar.putString("ivadescripcion",ivadescripcion);
+                        enviar.putInt("exenta",exenta);
+                        enviar.putInt("iva5",iva5);
+                        enviar.putInt("iva10",iva10);
 
-                    getParentFragmentManager().setFragmentResult("enviar",enviar);
-                    Toast.makeText(getActivity(),"Venta cargada",Toast.LENGTH_SHORT).show();
-                    limpiar();
-                    buscar.requestFocusFromTouch();
-                }
+                        getParentFragmentManager().setFragmentResult("enviar",enviar);
+                        //Toast.makeText(getActivity(),"Venta cargada",Toast.LENGTH_SHORT).show();
+                        limpiar();
+                        buscar.requestFocusFromTouch();
+                    }
+                    bajarTeclado();
+
+                }catch (Exception e){}
+
             }
         });
 
     }
+
+    private void bajarTeclado() {
+        View view = getActivity().getCurrentFocus();
+        if(view !=null){
+            InputMethodManager imn = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imn.hideSoftInputFromWindow(view.getWindowToken(),0);
+        }
+    }
+
     public void onClick() {
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

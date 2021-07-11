@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,8 @@
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableLeftCompat="@drawable/vendedor" />
 
     </LinearLayout>
 
@@ -60,7 +61,7 @@
         android:id="@+id/linearLayout22"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#3F51B5"
+        android:background="#009688"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
