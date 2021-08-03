@@ -17,6 +17,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.latinodistribuidora.Adaptador_PE;
+import com.example.latinodistribuidora.Adaptador_Productos;
 import com.example.latinodistribuidora.CRUD.Access_PE;
 import com.example.latinodistribuidora.CRUD.Access_Timbrado;
 import com.example.latinodistribuidora.Modelos.PuntoEmision;
@@ -28,7 +30,8 @@ import java.util.ArrayList;
 public class Listar_PE extends AppCompatActivity {
     private ListView lv;
     private ArrayList<PuntoEmision> lista = new ArrayList<>();
-    private ArrayAdapter<String> adaptador;
+    //private ArrayAdapter<String> adaptador;
+    private Adaptador_PE adaptador_pe;
     private int peseleccionado = -1;
     private Object mActionMode;
     private TextView pie;
@@ -119,20 +122,11 @@ public class Listar_PE extends AppCompatActivity {
             if (c.moveToFirst()){
                 do {
                     lista.add( new PuntoEmision (c.getInt(0),c.getString(1),c.getString(2),
-                            c.getString(3),c.getString(4),c.getString(5),c.getString(6)));
+                            c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7)));
                 }while (c.moveToNext());
             }
-            String[] arreglo = new String[lista.size()];
-            for (int i = 0;i<arreglo.length;i++){
-                arreglo[i] = "Establecimiento: "+lista.get(i).getEstablecimiento()
-                        +"\nPunto de emisión: "+lista.get(i).getPe()
-                        +"\nDirección: "+lista.get(i).getDireccion()
-                        +"\nFacturar desde: "+lista.get(i).getDesde()
-                        +"\nFacturar hasta: "+lista.get(i).getHasta()
-                        +"\nEstado: "+lista.get(i).getEstado();
-            }
-            adaptador = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview_item_ld,arreglo);
-            lv.setAdapter(adaptador);
+            adaptador_pe = new Adaptador_PE(this,lista);
+            lv.setAdapter(adaptador_pe);
             int cant = lv.getCount();
             if(cant==0){
                 pie.setText("Lista vacía");

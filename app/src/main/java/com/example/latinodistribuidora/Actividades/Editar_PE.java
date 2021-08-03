@@ -72,7 +72,7 @@ public class Editar_PE extends AppCompatActivity {
                 direccion.setText(c.getString(3));
                 desde.setText(c.getString(4));
                 hasta.setText(c.getString(5));
-                est.setText(c.getString(6));
+                est.setText(c.getString(7));
 
             }
             db.close();

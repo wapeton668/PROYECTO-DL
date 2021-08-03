@@ -6,5 +6,12 @@
         android:title="Vender"
         android:id="@+id/item_vender"
         app:showAsAction="always"
-        />
+        >
+        <menu>
+            <item android:id="@+id/item_contado"
+                android:title="Venta a contado" />
+            <item android:id="@+id/item_credito"
+                android:title="Venta a crédito" />
+        </menu>
+    </item>
 </menu>

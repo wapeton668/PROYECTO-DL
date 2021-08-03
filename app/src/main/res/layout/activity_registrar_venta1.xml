@@ -32,103 +32,24 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="85dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Operac. N°:"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/id_noper"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:fontFamily="sans-serif"
                     android:textColor="@color/white"
-                    tools:ignore="DuplicateIds" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="left"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="85dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:paddingLeft="2dp"
-                    android:text="Factura N°:"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/id_estab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="001"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/id_pexp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="001"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/id_nFact"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="0000000"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/id_idestab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0"
-                    android:visibility="gone" />
-
-                <TextView
-                    android:id="@+id/id_idtimbra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="0"
-                    android:visibility="gone" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/id_Fecha"
@@ -139,23 +60,85 @@
                     android:paddingRight="5dp"
                     android:text="31/31/2021"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/id_hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:fontFamily="sans-serif"
+                    android:text="24:59"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="left"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="85dp"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:paddingLeft="2dp"
+                    android:text="Factura N°:"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/id_nFact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:text="0000000"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/textView103"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:fontFamily="sans-serif"
+                    android:text="Condic: "
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/id_condicion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:fontFamily="sans-serif"
+                    android:text="CONTADO"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Vendedor:"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/id_NombVendedor"
@@ -165,15 +148,8 @@
                     android:fontFamily="sans-serif"
                     android:text="Nombre Vendedor"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/id_Vendedor"
-                    android:layout_width="28dp"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:visibility="gone" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
 
@@ -183,14 +159,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="85dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="Cliente:"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/id_DescCliente"
@@ -200,15 +176,8 @@
                     android:fontFamily="sans-serif"
                     android:text="Despensa Divino Niño Jesus"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/id_Cliente"
-                    android:layout_width="28dp"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:visibility="gone" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
 
@@ -218,37 +187,25 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="85dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:paddingLeft="2dp"
                     android:text="RUC:"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/id_ruc_venta"
-                    android:layout_width="130dp"
+                    android:layout_width="135dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="sans-serif"
                     android:text="80008448-9"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/id_condicion"
-                    android:layout_width="126dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:paddingRight="10dp"
-                    android:text="Contado"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
 
             </LinearLayout>
         </LinearLayout>
@@ -261,35 +218,49 @@
         android:background="#009688"
 
         android:gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView4"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/btnCVenta"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
+        <View
+            android:id="@+id/divider32"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="cargar"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:background="?android:attr/listDivider" />
 
-        <Button
-            android:id="@+id/btnDVenta"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_weight="2"
-            android:onClick="onClick"
-            android:text="DETALLE DE VENTA"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCVenta"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="cargar"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btnDVenta"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:onClick="onClick"
+                android:text="DETALLE DE VENTA"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+        </LinearLayout>
 
     </LinearLayout>
 

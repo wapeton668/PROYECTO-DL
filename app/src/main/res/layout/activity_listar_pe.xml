@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Observación: Solo un punto de emisión debe de estar activo para evitar errores a la hora de emitir comprobantes."
-            android:textColor="#009688"
+            android:textColor="#FF2222"
             android:textSize="14sp" />
 
         <ListView

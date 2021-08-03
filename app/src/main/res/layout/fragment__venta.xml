@@ -63,19 +63,19 @@
 
             <TextView
                 android:id="@+id/tv_nombre"
-                android:layout_width="75dp"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:gravity="left"
                 android:text="Producto: "
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/id_txtproducto"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="@android:drawable/editbox_background_normal"
                 android:gravity="left"
@@ -95,19 +95,19 @@
 
             <TextView
                 android:id="@+id/tv_precio"
-                android:layout_width="75dp"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:gravity="left"
                 android:text="Precio: "
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/id_txtprecio"
                 android:layout_width="100dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:background="@android:drawable/editbox_background_normal"
                 android:gravity="center|top"
@@ -117,7 +117,7 @@
 
             <TextView
                 android:id="@+id/textView118"
-                android:layout_width="60dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:gravity="center"
@@ -129,7 +129,7 @@
 
             <Spinner
                 android:id="@+id/spinner_umv"
-                android:layout_width="130dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
         </LinearLayout>
@@ -145,19 +145,19 @@
 
             <TextView
                 android:id="@+id/tv_cant"
-                android:layout_width="75dp"
+                android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:gravity="left"
                 android:text="Cantidad: "
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/id_txtcant"
                 android:layout_width="60dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:background="@android:drawable/editbox_background_normal"
                 android:gravity="center"
@@ -186,7 +186,7 @@
             <TextView
                 android:id="@+id/id_txttotal"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:drawable/editbox_background_normal"
                 android:gravity="center"
@@ -199,13 +199,20 @@
         <LinearLayout
             android:id="@+id/linearLayout59"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="5dp"
-            android:paddingRight="5dp">
+            android:paddingRight="5dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/id_idprodven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txt_idcodbarra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />

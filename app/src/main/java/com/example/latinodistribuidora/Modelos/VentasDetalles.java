@@ -1,15 +1,14 @@
 package com.example.latinodistribuidora.Modelos;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
-public class Ventas extends ArrayList<Ventas> implements Serializable {
+public class VentasDetalles implements Serializable {
 
-    private int id,total,exenta,iva5,iva10,idcliente, idusuario, idtimbrado,idemision;
-    private String est, emision, factura, timbra, condicion, fecha,hora,cliente,ruc,nombre,estado;
+    private int id,total,exenta,iva5,iva10,idprod,precio,subtotal,imp_apl;
+    private String est, emision, factura, timbra, condicion, fecha,cliente,ruc,nombre,estado,producto,cant,um;
 
-    public Ventas(int id, int total, int exenta, int iva5, int iva10, String est, String emision, String factura,
-                  String timbra, String condicion, String fecha,String hora, String cliente, String ruc, String nombre, String estado, int idcliente, int idusuario, int idtimbrado,int idemision) {
+    public VentasDetalles(int id, int total, int exenta, int iva5, int iva10, String est, String emision, String factura,
+                          String timbra, String condicion, String fecha, String cliente, String ruc, String nombre, String estado) {
         this.id = id;
         this.total = total;
         this.exenta = exenta;
@@ -21,16 +20,20 @@ public class Ventas extends ArrayList<Ventas> implements Serializable {
         this.timbra = timbra;
         this.condicion = condicion;
         this.fecha = fecha;
-        this.hora = hora;
         this.cliente = cliente;
         this.ruc = ruc;
         this.nombre = nombre;
         this.estado = estado;
-        this.idcliente = idcliente;
-        this.idusuario = idusuario;
-        this.idtimbrado = idtimbrado;
-        this.idemision = idemision;
+    }
 
+    public VentasDetalles(int idprod, String producto, String cant, int precio, int subtotal, int imp_apl,String um){
+        this.idprod=idprod;
+        this.producto=producto;
+        this.cant=cant;
+        this.precio=precio;
+        this.subtotal=subtotal;
+        this.imp_apl=imp_apl;
+        this.um=um;
     }
 
     public int getId() {
@@ -121,14 +124,6 @@ public class Ventas extends ArrayList<Ventas> implements Serializable {
         this.fecha = fecha;
     }
 
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
     public String getCliente() {
         return cliente;
     }
@@ -161,35 +156,60 @@ public class Ventas extends ArrayList<Ventas> implements Serializable {
         this.estado = estado;
     }
 
-    public int getIdcliente() {
-        return idcliente;
+
+    public int getIdprod() {
+        return idprod;
     }
 
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setIdprod(int idprod) {
+        this.idprod = idprod;
     }
 
-    public int getIdusuario() {
-        return idusuario;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setIdusuario(int idusuario) {
-        this.idusuario = idusuario;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
-    public int getIdtimbrado() {
-        return idtimbrado;
+    public int getSubtotal() {
+        return subtotal;
     }
 
-    public void setIdtimbrado(int idtimbrado) {
-        this.idtimbrado = idtimbrado;
+    public void setSubtotal(int subtotal) {
+        this.subtotal = subtotal;
     }
 
-    public int getIdemision() {
-        return idemision;
+    public int getImp_apl() {
+        return imp_apl;
     }
 
-    public void setIdemision(int idemision) {
-        this.idemision = idemision;
+    public void setImp_apl(int imp_apl) {
+        this.imp_apl = imp_apl;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public String getCant() {
+        return cant;
+    }
+
+    public void setCant(String cant) {
+        this.cant = cant;
+    }
+
+    public String getUm() {
+        return um;
+    }
+
+    public void setUm(String um) {
+        this.um = um;
     }
 }

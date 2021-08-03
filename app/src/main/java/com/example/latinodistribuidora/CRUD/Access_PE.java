@@ -78,6 +78,7 @@ public class Access_PE {
         values.put("direccion", direccion);
         values.put("facturainicio", desde);
         values.put("facturafin", hasta);
+        values.put("facturaactual", (desde-1));
         values.put("estado", "Activo");
         long insertado = db.insert("puntoemision",null,values);
 

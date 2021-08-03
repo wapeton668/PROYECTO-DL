@@ -10,15 +10,17 @@ public class PuntoEmision implements Serializable {
     public String direccion;
     public String desde;
     public String hasta;
+    public String actual;
     public String estado;
 
-    public PuntoEmision(int idemision, String establecimiento, String pe, String direccion, String desde, String hasta, String estado) {
+    public PuntoEmision(int idemision, String establecimiento, String pe, String direccion, String desde, String hasta,String actual, String estado) {
         this.idemision = idemision;
         this.establecimiento = establecimiento;
         this.pe = pe;
         this.direccion = direccion;
         this.desde = desde;
         this.hasta = hasta;
+        this.actual = actual;
         this.estado = estado;
     }
 
@@ -72,6 +74,14 @@ public class PuntoEmision implements Serializable {
 
     public void setHasta(String hasta) {
         this.hasta = hasta;
+    }
+
+    public String getActual() {
+        return actual;
+    }
+
+    public void setActual(String actual) {
+        this.actual = actual;
     }
 
     public String getEstado() {

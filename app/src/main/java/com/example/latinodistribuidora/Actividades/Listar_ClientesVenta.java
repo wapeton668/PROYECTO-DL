@@ -116,29 +116,70 @@ public class Listar_ClientesVenta extends AppCompatActivity {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            if (item.getItemId() == R.id.item_vender) {
+            if (item.getItemId() == R.id.item_contado) {
                 Clientes clientes = lista.get(clienteseleccionado);
                 String fechaF = obtenerFecha();
+                String horaF = obtenerHora();
                 String establecimiento = obtenerEstab();
                 String idemision = obtenerIDEmision();
                 String puntoexpedicion = obtenerPE();
                 String idtimbrado = obtenerTimbrado();
                 String factA=obtenerFactura();
-                Intent in = new Intent(getApplicationContext(), Registrar_venta.class);
-                in.putExtra("idcliente", clientes.getIdcliente());
-                in.putExtra("razonsocial", clientes.getRazon_social());
-                in.putExtra("ruc", clientes.getRuc());
-                in.putExtra("fecha", fechaF);
-                in.putExtra("idvendedor", idvendedor);
-                in.putExtra("vendedor", vendedor);
-                in.putExtra("puntoexpedicion", puntoexpedicion);
-                in.putExtra("establecimiento", establecimiento);
-                in.putExtra("facturaactual",factA);
-                in.putExtra("idemision",idemision);
-                in.putExtra("idtimbrado",idtimbrado);
-                startActivity(in);
-                mode.finish();
-                finish();
+                if(obtenerPE().equals("0")){
+                    Toast.makeText(getApplicationContext(),"NO EXISTE PUNTO DE EMISIÓN ACTIVO.\n\n" +
+                            "ES NECESARIO CONFIGURAR UN PUNTO PARA COMENZAR A REGISTRAR LAS VENTAS",Toast.LENGTH_LONG).show();
+                    finish();
+                }else{
+                    Intent in = new Intent(getApplicationContext(), Registrar_venta.class);
+                    in.putExtra("condicion","CONTADO");
+                    in.putExtra("idcliente", clientes.getIdcliente());
+                    in.putExtra("razonsocial", clientes.getRazon_social());
+                    in.putExtra("ruc", clientes.getRuc());
+                    in.putExtra("fecha", fechaF);
+                    in.putExtra("hora",horaF);
+                    in.putExtra("idvendedor", idvendedor);
+                    in.putExtra("vendedor", vendedor);
+                    in.putExtra("puntoexpedicion", puntoexpedicion);
+                    in.putExtra("establecimiento", establecimiento);
+                    in.putExtra("facturaactual",factA);
+                    in.putExtra("idemision",idemision);
+                    in.putExtra("idtimbrado",idtimbrado);
+                    startActivity(in);
+                    mode.finish();
+                    finish();
+                }
+            }else if (item.getItemId() == R.id.item_credito) {
+                Clientes clientes = lista.get(clienteseleccionado);
+                String fechaF = obtenerFecha();
+                String horaF = obtenerHora();
+                String establecimiento = obtenerEstab();
+                String idemision = obtenerIDEmision();
+                String puntoexpedicion = obtenerPE();
+                String idtimbrado = obtenerTimbrado();
+                String factA=obtenerFactura();
+                if(obtenerPE().equals("0")){
+                    Toast.makeText(getApplicationContext(),"NO EXISTE PUNTO DE EMISIÓN ACTIVO.\n\n" +
+                            "ES NECESARIO CONFIGURAR UN PUNTO PARA COMENZAR A REGISTRAR LAS VENTAS",Toast.LENGTH_LONG).show();
+                    finish();
+                }else{
+                    Intent in = new Intent(getApplicationContext(), Registrar_venta.class);
+                    in.putExtra("condicion","CREDITO");
+                    in.putExtra("idcliente", clientes.getIdcliente());
+                    in.putExtra("razonsocial", clientes.getRazon_social());
+                    in.putExtra("ruc", clientes.getRuc());
+                    in.putExtra("fecha", fechaF);
+                    in.putExtra("hora",horaF);
+                    in.putExtra("idvendedor", idvendedor);
+                    in.putExtra("vendedor", vendedor);
+                    in.putExtra("puntoexpedicion", puntoexpedicion);
+                    in.putExtra("establecimiento", establecimiento);
+                    in.putExtra("facturaactual",factA);
+                    in.putExtra("idemision",idemision);
+                    in.putExtra("idtimbrado",idtimbrado);
+                    startActivity(in);
+                    mode.finish();
+                    finish();
+                }
             }
             return false;
         }
@@ -154,9 +195,16 @@ public class Listar_ClientesVenta extends AppCompatActivity {
     public String obtenerFecha(){
         long ahora = System.currentTimeMillis();
         Date fecha = new Date(ahora);
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy-HH:mm");
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         String fechaF = df.format(fecha);
         return fechaF;
+    }
+    public String obtenerHora(){
+        long ahora = System.currentTimeMillis();
+        Date hora = new Date(ahora);
+        DateFormat df = new SimpleDateFormat("HH:mm");
+        String horaF = df.format(hora);
+        return horaF;
     }
     public String obtenerEstab(){
         Access_PE db = new Access_PE(getApplicationContext());
@@ -189,19 +237,13 @@ public class Listar_ClientesVenta extends AppCompatActivity {
         return puntoex;
     }
     public String obtenerFactura(){
-        Access_Venta venta = new Access_Venta(getApplicationContext());
-        Cursor v = venta.getVenta();
         String fac = null;
-        if(v.moveToLast()){
-            fac= String.valueOf(Integer.parseInt(v.getString(1))+1);
+        Access_PE pe = new Access_PE(getApplicationContext());
+        Cursor pex= pe.getPEActivo();
+        if(pex.moveToNext()){
+            fac= String.valueOf(pex.getInt(6)+1);
         }else{
-            Access_PE pe = new Access_PE(getApplicationContext());
-            Cursor pex= pe.getPEActivo();
-            if(pex.moveToNext()){
-                fac= String.valueOf(pex.getInt(4));
-            }else{
-                fac="0";
-            }
+            fac="0";
         }
         switch (fac.length()){
             case 1: factactual="000000"+fac;

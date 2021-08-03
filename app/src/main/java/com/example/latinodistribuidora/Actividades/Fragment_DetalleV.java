@@ -54,6 +54,7 @@ public class Fragment_DetalleV extends Fragment {
     private static final String ARG_NROFACTURA = "nrofactura";
     private static final String ARG_CONDICION = "condicion";
     private static final String ARG_FECHA = "fecha";
+    private static final String ARG_HORA = "hora";
     private static final String ARG_IDCLIENTE = "idcliente";
     private static final String ARG_CRZ = "Vcliente";
     private static final String ARG_CRUC = "Vruc";
@@ -68,7 +69,7 @@ public class Fragment_DetalleV extends Fragment {
 
 
 
-    public static String producto,precio,cantidad,um,ivadescripcion;
+    public static String codbarra, producto,precio,cantidad,um,ivadescripcion;
     public static int id,total,exenta,iva5,iva10;
     public static int exentaT;
     public static int iva5T;
@@ -82,6 +83,7 @@ public class Fragment_DetalleV extends Fragment {
     private String nrofactura;
     private String condicion;
     private String fecha;
+    private String hora;
     private int idcliente;
     private String vcliente;
     private String vruccliente;
@@ -120,7 +122,7 @@ public class Fragment_DetalleV extends Fragment {
         // Required empty public constructor
 
     }
-    public static Fragment_DetalleV newInstance(int idventas,String nestablecimiento,String nemision, String nrofactura, String condicion, String fecha,
+    public static Fragment_DetalleV newInstance(int idventas,String nestablecimiento,String nemision, String nrofactura, String condicion, String fecha,String hora,
                                               int idcliente,String cliente,String ruccliente, int idusuario,String vendedor, int idtimbrado, int idemision) {
         Fragment_DetalleV fragment = new Fragment_DetalleV();
         Bundle args = new Bundle();
@@ -130,6 +132,7 @@ public class Fragment_DetalleV extends Fragment {
         args.putString(ARG_NROFACTURA, nrofactura);
         args.putString(ARG_CONDICION, condicion);
         args.putString(ARG_FECHA, fecha);
+        args.putString(ARG_HORA, hora);
         args.putInt(ARG_IDCLIENTE, idcliente);
         args.putString(ARG_CRZ, cliente);
         args.putString(ARG_CRUC, ruccliente);
@@ -151,6 +154,7 @@ public class Fragment_DetalleV extends Fragment {
             nrofactura = getArguments().getString(ARG_NROFACTURA);
             condicion = getArguments().getString(ARG_CONDICION);
             fecha = getArguments().getString(ARG_FECHA);
+            hora = getArguments().getString(ARG_HORA);
             idcliente = getArguments().getInt(ARG_IDCLIENTE);
             vcliente = getArguments().getString(ARG_CRZ);
             vruccliente = getArguments().getString(ARG_CRUC);
@@ -188,6 +192,7 @@ public class Fragment_DetalleV extends Fragment {
             public void onFragmentResult(@NonNull @NotNull String requestKey, @NonNull @NotNull Bundle result) {
                 if(!result.isEmpty()){
                     id= Integer.parseInt(result.getString("id"));
+                    codbarra = result.getString("codbarra");
                     producto=result.getString("producto");
                     precio=result.getString("precio");
                     cantidad=result.getString("cantidad");
@@ -283,7 +288,7 @@ public class Fragment_DetalleV extends Fragment {
 
     public void cargarItems(){
         try{
-            lista.add( new DetalleVenta(id,producto,precio,cantidad,um,total,ivadescripcion,exenta,iva5,iva10));
+            lista.add( new DetalleVenta(id,codbarra,producto,precio,cantidad,um,total,ivadescripcion,exenta,iva5,iva10));
             adaptadorProductos = new Adaptador_Productos_detalleventa(getContext(),lista);
             adaptadorProductos.notifyDataSetChanged();
             lv.setAdapter(adaptadorProductos);
@@ -329,20 +334,10 @@ public class Fragment_DetalleV extends Fragment {
         ((TextView)vista.findViewById(R.id.idtotalfinal)).setText(String.valueOf(totalfinal));
     }
 
-    /*private void enviarDatosFragmentFinal(){
-        Bundle datosF = new Bundle();
-        datosF.putString("exenta",((TextView)vista.findViewById(R.id.idtotalexenta)).getText().toString());
-        datosF.putString("iva5",((TextView)vista.findViewById(R.id.idtotal5)).getText().toString());
-        datosF.putString("iva10",((TextView)vista.findViewById(R.id.idtotal10)).getText().toString());
-        datosF.putString("total",((TextView)vista.findViewById(R.id.idtotalfinal)).getText().toString());
-
-        getParentFragmentManager().setFragmentResult("datosF",datosF);
-    }*/
-
     public void Guardar(){
         Access_Venta db = Access_Venta.getInstance(getContext());
             db.openWritable();
-            long insertarventa = db.insertarventa(idventas,nrofactura,condicion,fecha,
+            long insertarventa = db.insertarventa(idventas,nrofactura,condicion,fecha,hora,
                     Integer.parseInt(((TextView)vista.findViewById(R.id.idtotalfinal)).getText().toString()),
                     Integer.parseInt(((TextView)vista.findViewById(R.id.idtotalexenta)).getText().toString())
                     ,Integer.parseInt(((TextView)vista.findViewById(R.id.idtotal5)).getText().toString()),
@@ -350,6 +345,8 @@ public class Fragment_DetalleV extends Fragment {
                     idcliente,idusuario,idtimbrado,idemision);
             if(insertarventa>0){
                 Toast.makeText(getContext(),"Venta registrada!",Toast.LENGTH_SHORT).show();
+                db.ActualizarOP(idventas);
+                db.ActualizarFacturaActual(Integer.parseInt(nrofactura),idemision);
                 GuardarDetalleVenta();
             }else{
                 Toast.makeText(getContext(),"No se pudo registra la venta",Toast.LENGTH_SHORT).show();
@@ -364,7 +361,7 @@ public class Fragment_DetalleV extends Fragment {
                 int position = (i-1);
                 DetalleVenta item = lista.get(position);
                 try{
-                    long insertarDetalle = db.insertarDetalle(idventas,item.getIdproducto(),item.getCantidad(),
+                    long insertarDetalle = db.insertarDetalle(idventas,idemision,item.getIdproducto(),item.getCantidad(),
                             Integer.parseInt(item.getPrecio()),item.getTotal(),Integer.parseInt(item.getIvadescripcion()),item.getUm());
                     Log.i("detalle: ", String.valueOf(insertarDetalle));
                 }catch(Exception e){
@@ -518,8 +515,9 @@ private void findBT() {
                     msg += "\n";
                     msg += "     "+empRZ+"\n";
                     msg += "        RUC:"+empRUC+"\n";
-                    msg += "       Cel:"+empTel+"\n";
-                    msg += "      "+empDir+" - PY"+"\n";
+                    msg += " Cel:"+empTel+"\n";
+                    msg += "  "+empDir+"\n";
+                    msg += "      Cnel. Oviedo - PY"+"\n";
                     msg += "------------------------------\n";
                     msg += "     Timbrado N: "+timbActual+"\n";
                     msg += "  Inic. Vigencia: "+fdesde+"\n";
@@ -527,9 +525,9 @@ private void findBT() {
                     msg += "          IVA INCLUIDO      \n";
                     msg += "------------------------------\n";
                     msg += "Factura Nro: "+nestablecimiento+"-"+nemision+"-"+nrofactura+"\n";
-                    msg += "Fecha/Hora: "+fecha+"\n";
+                    msg += "Fecha/Hora: "+fecha+" "+hora+"\n";
                     msg += "Condicion: "+condicion+"\n";
-                    msg += "Vendedor:"+vendedor+"\n";
+                    msg += "Vendedor: "+vendedor+"\n";
                     msg += "------------------------------\n";
                     msg += "CLIENTE: "+vcliente+"\n";
                     msg += "RUC/CI: "+vruccliente+"\n";
@@ -540,7 +538,7 @@ private void findBT() {
                     for(int i=1; i<=lista.size();i++) {
                         int position = (i - 1);
                         DetalleVenta item = lista.get(position);
-                        msg += String.format("%1$1s" , item.producto+"\n");
+                        msg += String.format("%1$1s" , item.codbarra+" - "+item.producto+"\n");
                         msg += String.format("%1$1s %2$6s %3$7s %4$8s" , item.ivadescripcion+"%",item.cantidad+" "+item.um, item.precio, item.total)+ "\n";
                     }
                     msg += "------------------------------\n";

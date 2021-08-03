@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.example.latinodistribuidora.Conexion.DatabaseOpenHelper;
 
@@ -61,9 +59,22 @@ public class Access_Venta {
 
 
 
-    public Cursor getv_venta(String texto){
+    public Cursor getv_venta(String fechaactual){
         this.openReadable();
-        registros = db.rawQuery("Select * from v_ventas where fecha like '%"+texto+"%'", null);
+        registros = db.rawQuery("Select * from v_ventas where fecha like '%"+fechaactual+"%'", null);
+        return registros;
+    }
+
+    public Cursor getv_ventadetalle(String fechaactual){
+        this.openReadable();
+        registros = db.rawQuery("Select * from v_vd where fecha like '%"+fechaactual+"%'", null);
+        return registros;
+    }
+
+
+    public Cursor getTotal(String fechaactual){
+        this.openReadable();
+        registros = db.rawQuery("SELECT sum(totalfinal) FROM v_ventas where fecha like'%"+fechaactual+"%' and estado='S'", null);
         return registros;
     }
 
@@ -80,9 +91,21 @@ public class Access_Venta {
         return registros;
     }
 
+    public Cursor getVentaSync(){
+        this.openWritable();
+        registros = db.rawQuery("Select * from ventas", null);
+        return registros;
+    }
+
+    public Cursor getDetalleSync(){
+        this.openWritable();
+        registros = db.rawQuery("Select * from detalleventa", null);
+        return registros;
+    }
+
     public Cursor getCodigo() {
         this.openWritable();
-        registros = db.rawQuery("select MAX(idventas) from ventas",null);
+        registros = db.rawQuery("select nventa from ref",null);
         return registros;
     }
 
@@ -92,13 +115,14 @@ public class Access_Venta {
         return  Filtrar;
     }*/
 
-    public long insertarventa(int idventas,String nrofactura, String condicion, String fecha, int total, int exenta, int iva5, int iva10, int idcliente,
+    public long insertarventa(int idventas,String nrofactura, String condicion, String fecha,String hora, int total, int exenta, int iva5, int iva10, int idcliente,
                               int idusuario, int idtimbrado, int idemision){
         ContentValues values = new ContentValues();
         values.put("idventas", idventas);
         values.put("nrofactura", nrofactura);
         values.put("condicion", condicion);
         values.put("fecha", fecha);
+        values.put("hora", hora);
         values.put("total", total);
         values.put("exenta", exenta);
         values.put("iva5", iva5);
@@ -114,9 +138,10 @@ public class Access_Venta {
         return insertado;
     }
 
-    public long insertarDetalle(int idventa, int idproducto, String cantidad, int precio,int total, int impuesto, String um){
+    public long insertarDetalle(int idventa,int idemision, int idproducto, String cantidad, int precio,int total, int impuesto, String um){
         ContentValues values = new ContentValues();
         values.put("venta_idventa", idventa);
+        values.put("idemision", idemision);
         values.put("productos_idproductos", idproducto);
         values.put("cantidad", cantidad);
         values.put("precio", precio);
@@ -127,51 +152,30 @@ public class Access_Venta {
         return insertado;
     }
 
-   /* public boolean insertarDetalle(int idventa, int idproducto, String cantidad, int precio, int impuesto){
-
-        boolean wasSuccess = true;
-        try{
-            db.beginTransaction();
-            ContentValues values = new ContentValues();
-            values.put("venta_idventa", idventa);
-            values.put("productos_idproductos", idventa);
-            values.put("cantidad", idventa);
-            values.put("precio", idventa);
-            values.put("impuesto_aplicado", idventa);
-            long insertado = db.insert("detalleventa",null,values);
-            if (insertado==-1){
-                wasSuccess=false;
-            }else {
-                db.setTransactionSuccessful();
-            }
-        }catch (Exception e){
-            Log.i("jd",e.getMessage());
-            //
-            //db.close();
-        }
-        db.endTransaction();
-        db.close();
-        return wasSuccess;
-
-    }*/
-
-    /*public Cursor getCliente_a_modificar(int clienteEditar) {
-        this.openReadable();
-        registros = db.rawQuery("Select * from v_clientes where idcliente="+clienteEditar, null);
-        return  registros;
-    }
-
-    public long ActualizarCliente(ContentValues values, int clienteEditar) {
+    public void ActualizarOP(int OP) {
         this.openWritable();
-        long accion = db.update("clientes",values, "idcliente="+clienteEditar,null);
-        return accion;
+        db.execSQL("UPDATE ref SET nventa="+OP);
     }
-    public long EliminarCliente(int ID) {
+    public void ActualizarFacturaActual(int OP, int ID) {
+        this.openWritable();
+        db.execSQL("UPDATE puntoemision SET facturaactual="+OP+" WHERE idemision="+ID);
+    }
+
+    public long EliminarVenta(int ID) {
         ContentValues values = new ContentValues();
         values.put("estado", "N");
         this.openWritable();
-        long accion = db.update("clientes",values, "idcliente="+ID,null);
+        long accion = db.update("ventas",values, "idventas="+ID,null);
         return accion;
-    }*/
+    }
+
+    public void borrarVentas() {
+        this.openWritable();
+        db.execSQL("DELETE FROM ventas");
+    }
+    public void borrarDetallesVenta() {
+        this.openWritable();
+        db.execSQL("DELETE FROM detalleventa");
+    }
 
 }

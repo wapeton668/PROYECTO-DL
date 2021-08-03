@@ -9,4 +9,16 @@
     <string name="btnFin">FINALIZAR</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="URL_OBTENER_VENTAS"> http://192.168.122.179/fact-express/ObtenerVentas.php</string>
+    <string name="URL_REGISTRAR_VENTAS"> http://192.168.122.179/fact-express/RegistrarVentas.php</string>
+    <string name="URL_REGISTRAR_DETALLES"> http://192.168.122.179/fact-express/RegistrarDetallesVentas.php</string>
+
+
+
+    <string-array name="condicion_venta">
+        <item>Contado</item>
+        <item>Credito</item>
+    </string-array>
+
 </resources>

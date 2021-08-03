@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class DetalleVenta implements Serializable {
     public int idproducto;
+    public String codbarra;
     public String producto;
     public String cantidad;
     public String precio;
@@ -15,8 +16,9 @@ public class DetalleVenta implements Serializable {
     public int iva10;
     public int posicion;
 
-    public DetalleVenta(int idproducto, String producto, String precio, String cantidad,String um, int total, String ivadescripcion, int exenta, int iva5, int iva10) {
+    public DetalleVenta(int idproducto,String codbarra, String producto, String precio, String cantidad,String um, int total, String ivadescripcion, int exenta, int iva5, int iva10) {
         this.idproducto = idproducto;
+        this.codbarra = codbarra;
         this.producto = producto;
         this.cantidad = cantidad;
         this.precio = precio;
@@ -49,6 +51,14 @@ public class DetalleVenta implements Serializable {
 
     public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
+    }
+
+    public String getCodbarra() {
+        return codbarra;
+    }
+
+    public void setCodbarra(String codbarra) {
+        this.codbarra = codbarra;
     }
 
     public String getProducto() {

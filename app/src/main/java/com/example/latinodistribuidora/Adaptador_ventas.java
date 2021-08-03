@@ -52,6 +52,7 @@ public class Adaptador_ventas extends BaseAdapter {
         TextView vendedor = convertView.findViewById(R.id.tv_vendedor);
         TextView cliente = convertView.findViewById(R.id.tv_cliente);
         TextView total = convertView.findViewById(R.id.tv_total);
+        TextView estado= convertView.findViewById(R.id.id_estadoV);
 
         idventa.setText(String.valueOf(item.getId()));
         timbado.setText("Timbrado: "+item.getTimbra());
@@ -60,10 +61,20 @@ public class Adaptador_ventas extends BaseAdapter {
         vendedor.setText("Vendedor: "+item.getNombre());
         cliente.setText("Nombre: "+item.getCliente()+" - RUC: "+item.getRuc());
         total.setText("TOTAL: "+String.valueOf(item.getTotal()));
+        estado.setText(estado(item.getEstado()));
 
         return convertView;
     }
 
+    public String estado(String estado){
+        String est;
+        if(estado.equals("S")){
+            est="";
+        }else{
+            est="ANULADO";
+        }
+        return est;
+    }
 
 
 }

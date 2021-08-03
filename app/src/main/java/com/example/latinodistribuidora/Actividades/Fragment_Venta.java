@@ -55,7 +55,7 @@ public class Fragment_Venta extends Fragment {
     public static int exenta,iva5,iva10;
 
 
-    private TextView txtidproducto,txtproduto,txtprecio,txtumCant,txtumdescripcion,txtTotalVenta,txtiva,txttotaliva;
+    private TextView txtidproducto,txtcodbarra,txtproduto,txtprecio,txtumCant,txtumdescripcion,txtTotalVenta,txtiva,txttotaliva;
 
     public Fragment_Venta() {
         // Required empty public constructor
@@ -76,6 +76,7 @@ public class Fragment_Venta extends Fragment {
         vista = inflater.inflate(R.layout.fragment__venta, container, false);
         buscar = vista.findViewById(R.id.id_buscarproductosV);
         txtidproducto = vista.findViewById(R.id.id_idprodven);
+        txtcodbarra = vista.findViewById(R.id.txt_idcodbarra);
         txtproduto = vista.findViewById(R.id.id_txtproducto);
         txtprecio = vista.findViewById(R.id.id_txtprecio);
         txtumCant = vista.findViewById(R.id.txtidumcant);
@@ -297,6 +298,7 @@ public class Fragment_Venta extends Fragment {
                         Toast.makeText(getActivity(),"Falta calcular el total de esta venta",Toast.LENGTH_SHORT).show();
                     }else{
                         String id=((TextView) view.findViewById(R.id.id_idprodven)).getText().toString();
+                        String codbarra=((TextView) view.findViewById(R.id.txt_idcodbarra)).getText().toString();
                         String producto=((TextView  ) view.findViewById(R.id.id_txtproducto)).getText().toString();
                         String precio = ((TextView) view.findViewById(R.id.id_txtprecio)).getText().toString();
                         String cantidad = ((EditText) view.findViewById(R.id.id_txtcant)).getText().toString();
@@ -306,6 +308,7 @@ public class Fragment_Venta extends Fragment {
 
                         Bundle enviar = new Bundle();
                         enviar.putString("id",id);
+                        enviar.putString("codbarra",codbarra);
                         enviar.putString("producto",producto);
                         enviar.putString("precio",precio);
                         enviar.putString("cantidad",cantidad);
@@ -346,6 +349,7 @@ public class Fragment_Venta extends Fragment {
                 productoseleccionado = position;
                 Productos productos = lista.get(productoseleccionado);
                 txtidproducto.setText(String.valueOf(productos.getIdproducto()));
+                txtcodbarra.setText(productos.getCod_barra());
                 txtproduto.setText(productos.getDescripcion());
                 txtprecio.setText(productos.getPrecio());
                 txtumdescripcion.setText(productos.getUnidad());
